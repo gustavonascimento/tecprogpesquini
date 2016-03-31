@@ -1,0 +1,325 @@
+<!-- Home Page
+==========================================-->
+<div id="tf-home" class="text-center">
+  <div class="overlay">
+    <div class="content">
+      <!--<h1>Pesqu<strong><span class="color">Ini</span></strong></h1>-->
+      <%= image_tag 'pesquini_small2.png' %>
+    </div>
+
+    <div class="content_search">
+
+      <%= search_form_for @search do |f| %>
+      <div class="input-group">
+        <%= f.text_field :corporate_name_cont, class: "form-control input-lg id", placeholder: "Digite nome ou CNPJ da empresa", placeholder: "Digite nome ou CNPJ da empresa"%>
+        <span class="input-group-btn">
+          <%= f.button type: "submit", class: "btn btn-lg btn-r", id: "search_index" do %>
+            <i class="fa fa-search fa-lg"></i>
+          <% end %>
+        </span>
+
+      </div>
+      <% end %>
+      <div class="text_pesq_empr">
+      <hr>
+        <p class="lead"><strong>Pesquisa</strong> de empresas <strong>Inidôneas</strong></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- About Empresas
+==========================================-->
+<div id="tf-about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!--<img src="img/02.png" class="img-responsive">-->
+        <%= image_tag 'empresa_1.jpg', class: "img-responsive" %>
+      </div>
+      <div class="col-md-6">
+        <div class="about-text">
+          <div class="section-title">
+            <h4>O que são </h4>
+            <h2>empresas <strong>Inidôneas</strong> ?</h2>
+            <hr>
+            <div class="clearfix"></div>
+          </div>
+          <p class="intro">As empresas que constam como sendo inidôneas são aquelas que receberam sanções que tenham como efeito, ou restrição ao direito de participar em licitações ou de celebrar contratos com a Administração Pública. Algumas das sanções que uma empresa pode sofrer:</p>
+          <ul class="about-list">
+            <li>
+              <span class="fa fa-dot-circle-o"></span>
+              <strong>Suspensão</strong> <em> temporária</em>
+            </li>
+            <li>
+              <span class="fa fa-dot-circle-o"></span>
+              <strong>Declaração</strong> <em> de inidoneidade</em>
+            </li>
+            <li>
+              <span class="fa fa-dot-circle-o"></span>
+              <strong>Impedimento</strong><em> de licitar e contratar</em>
+            </li>
+            <li>
+              <span class="fa fa-dot-circle-o"></span>
+              <strong>Proibição</strong> <em> de participar de licitações e de contratar</em>
+            </li>
+            <li>
+              <span class="fa fa-dot-circle-o"></span>
+              <strong>Outras</strong> -  <a class = "more_link" href ="more"><em>Clique aqui saber sobre mais sanções e informações sobre elas</em></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Search Page
+==========================================-->
+<div id="tf-search" class="text-center">
+  <div class="overlay">
+    <div class="container">
+      <div class="section-title center">
+        <h2>Formas de <strong>pesquisa</strong></h2>
+        <div class="line">
+          <hr>
+        </div>
+      </div>
+
+      <div id="search" class="owl-carousel owl-theme row">
+
+        <%= link_to(root_path(:anchor => "tf-home")) do %>
+          <div class="item">
+            <div class="thumbnail">
+              <%= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+              <div class="caption">
+                <h3>Pesquisa por nome ou CNPJ</h3>
+                <hr>
+                <p>Realizar a pesquisa através da razão social da empresa.</p>
+              </div>
+            </div>
+          </div>
+        <%  end %>
+
+        <%= link_to(enterprises_path, method: :get) do %>
+        <div class="item">
+          <div class="thumbnail">
+            <%= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Mostrar todas as empresas</h3>
+              <hr>
+              <p>Mostrar todas as empresas cadastradas.</p>
+            </div>
+          </div>
+        </div>
+        <%  end %>
+ <!--
+        <div class="item">
+          <div class="thumbnail">
+            < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Pesquisa pela razão social</h3>
+              <hr>
+              <p>Realizar a pesquisa através da razão social da empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="thumbnail">
+            < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Pesquisa pelo nome fantasia da empresa</h3>
+              <hr>
+              <p>Realizar a pesquisa através do nome fantasia da empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="thumbnail">
+            < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Pesquisa por CNPJ</h3>
+              <hr>
+              <p>Realizar a pesquisa através do CNPJ da empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="thumbnail">
+            < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Pesquisa por localização</h3>
+              <hr>
+              <p>Realizar a pesquisa através da localização da empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="thumbnail">
+            < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
+            <div class="caption">
+              <h3>Pesquisa customizada</h3>
+              <hr>
+              <p>Utilizar nossa ferramenta da busca customizada.</p>
+            </div>
+          </div>
+        </div>
+-->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Services Section
+==========================================-->
+<div id="tf-services" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2><strong>Estatísticas</strong> sobre empresas</h2>
+      <div class="line">
+        <hr>
+      </div>
+      <div class="clearfix"></div>
+      <em>Visualização de gráficos e rankings sobre empresas inidôneas. Por meio dessa ferramenta é possivel obter algumas informações relacionadas empresas inidôneas de uma forma geral.</em>
+    </div>
+    <div class="space"></div>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 service">
+        <%= link_to(statistics_path(:anchor => "tf-sanction_by_state"))do %>
+        <i class="fa fa-bar-chart"></i>
+        <h4><strong>Estados com mais sanções</strong></h4>
+        <p>Gráfico que indica  a quantidade de sanções por Unidade Federativa.</p>
+        <% end %>
+      </div>
+
+      <div class="col-md-3 col-sm-6 service">
+        <%= link_to(statistics_path(:anchor => "tf-most_sanctioned_ranking"))do %>
+        <i class="fa fa-line-chart"></i>
+        <h4><strong>Empresas com mais sanções</strong></h4>
+        <p>Ranking que indica  a quantidade de empresas com mais sançoes.</p>
+        <% end %>
+      </div>
+
+       <div class="col-md-3 col-sm-6 service">
+        <%= link_to(statistics_path(:anchor => "tf-sanction_by_type"))do %>
+        <i class="fa fa-pie-chart"></i>
+        <h4><strong>Tipos de sanções</strong></h4>
+        <p>Gráfico que indica os tipos de sanção mais recorrentes e suas quantidades.</p>
+        <% end %>
+      </div>
+
+       <div class="col-md-3 col-sm-6 service">
+        <%= link_to(statistics_path(:anchor => "tf-payment_rankings"))do %>
+        <i class="fa fa-usd"></i>
+        <h4><strong>Empresas com maior numero de pagamentos</strong></h4>
+        <p>Ranking que indica as empresas que mais receberam pagamentos do governo.</p>
+        <% end %>
+      </div>
+      <!--
+      <div class="col-md-3 col-sm-6 service">
+        < %= link_to(enterprises_path, method: :get) do %>
+        <i class="fa fa-usd"></i>
+        <h4><strong>Gastos</strong></h4>
+        <p>Ranking das empresas que geraram maiores prejuísos ao Estado.</p>
+        < % end %>
+      </div>
+      -->
+<!--
+      <div class="col-md-3 col-sm-6 service">
+        <i class="fa fa-clock-o"></i>
+        <h4><strong>Período</strong></h4>
+        <p>Períodos de tempo em que houve a identificação da maior quantidade empresas inidôeneas.</p>
+      </div>
+
+      <div class="col-md-3 col-sm-6 service">
+        <i class="fa fa-bullhorn"></i>
+        <h4><strong>outro</strong></h4>
+        <p>outro outro outro outro outro outro outro outro.</p>
+        </div>
+-->
+      </div>
+    </div>
+  </div>
+
+
+<div id="tf-clients" class="text-center">
+  <div class="overlay">
+    <div class="container">
+
+      <div class="about_pesquini">
+        <div class="section-title center">
+          <h2>Sobre o <strong>pesquini</strong></h2>
+        </div>
+        <hr>
+        <h3>O sistema pesquini visa disponibilizar informaçoes sobre empresas brasileiras inidôneas de forma mais interativa e atrativa por meio de elementos visuais , como gráficos, tabelas e rankings para a população em geral.</h3>
+      </div>
+
+      <div class="about_us">
+        <div class="section-title center">
+          <h2>Sobre <strong>nós</strong></h2>
+        </div>
+        <hr>
+        <h3>Somos alunos da Universidade de Brasilia (UnB - FGA). Desenvolvemos esse software como um projeto da disciplina Métodos de Desenvolvimento de software</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Clients Section
+==========================================-->
+<!--
+<div id="tf-clients" class="text-center">
+  <div class="overlay">
+    <div class="container">
+
+      <div class="section-title center">
+        <h2>Outra <strong>funcionalidade</strong></h2>
+        <div class="line">
+          <hr>
+        </div>
+      </div>
+      <div id="clients" class="owl-carousel owl-theme">
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+        <div class="item">
+          < %= image_tag 'search/lupa.png' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+-->

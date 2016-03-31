@@ -1,0 +1,39 @@
+#tf-sanction_by_state{
+  padding-bottom: 50px;
+}
+ul.sanction_by_state-list{ margin: 30px 0 0 ;}
+ul.sanction_by_state-list li{
+  display: block;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+ul.sanction_by_state-list li span{
+  margin-right: 10px;
+}
+
+#tf-most_sanctioned_ranking{
+  padding: 50px;
+}
+ul.most_sanctioned_ranking-list{ margin: 30px 0 0 ;}
+ul.most_sanctioned_ranking-list li{
+  display: block;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+ul.most_sanctioned_ranking-list li span{
+  margin-right: 10px;
+}
+
+#tf-sanction_by_type{
+  padding: 50px;
+}
+
+#tf-payment_rankings{
+  padding: 50px;
+}
+
+.back_button a{
+  color: black;
+}

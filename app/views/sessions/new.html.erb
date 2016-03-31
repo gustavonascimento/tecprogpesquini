@@ -1,0 +1,17 @@
+<div class="container">
+		<div class="signup">
+			<% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <span style ="color:#FF0000"><%= value %>
+        </div>
+  		<% end %>
+			<h1>Sign In</h1>
+			<%= form_for(:session, url: sessions_path) do |f| %>
+				<%= f.label :login, class: 'signup_text' %><br>
+				<%= f.text_field :login, class: 'form-control' %><br><br>
+				<%= f.label :password, class: 'signup_text' %><br>
+				<%= f.password_field :password, class: 'form-control' %><br><br>
+				<%= f.submit "Sign in", class: "btn btn-success" %>
+			<% end %>
+		</div>
+</div>

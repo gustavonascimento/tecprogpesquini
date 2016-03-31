@@ -1,0 +1,10 @@
+#titulo_ranking{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#titulo_ranking hr{
+  border-color: #fcac45;
+  border-width: 4px;
+  width: 300px;
+}
