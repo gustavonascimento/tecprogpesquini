@@ -1,0 +1,44 @@
+List of variables and Functions of Pesquini
+
+Variáveis
+
+Models:
+	User:
+		String login
+		String password_digest
+		String remeber_token
+		String type
+
+	States:
+		Integer code
+		String name
+		String abbreviation
+
+	Sanctions:
+		Date initial_date
+		Date final_date
+		String process_number
+		String sanction_organ
+		Integer enterprise_id
+		Integer sanction_type_id
+		Integer state_id
+
+	Sanction_types
+		String description
+		String legal_foundation
+		String foundation_description
+
+	Payments
+		String identifier
+		String process_number
+		Float initial_value
+		Date sign_date
+		Date start_date
+		Date end_date
+		Integer Enterprise_id
+
+	Enterprises
+		String cnpj
+		String corporate_name
+		Integer sanctions_count
+		Float payments_sum
