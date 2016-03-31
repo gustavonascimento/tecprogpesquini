@@ -23,12 +23,12 @@ Models:
 		Integer sanction_type_id
 		Integer state_id
 
-	Sanction_types
+	Sanction_types:
 		String description
 		String legal_foundation
 		String foundation_description
 
-	Payments
+	Payments:
 		String identifier
 		String process_number
 		Float initial_value
@@ -37,8 +37,32 @@ Models:
 		Date end_date
 		Integer Enterprise_id
 
-	Enterprises
+	Enterprises:
 		String cnpj
 		String corporate_name
 		Integer sanctions_count
 		Float payments_sum
+
+Controllers
+	Enterprises:
+		search
+		enterprises
+		per_page
+		page_num
+		enterprise
+		collection
+		payments
+		sanctions
+		payment_position
+		position
+
+	Statistics:
+		states_list
+		sanjana
+		sanction_type_list
+		enterprise_group_array
+		enterprise_group
+		enterprise_group_count
+		quantidade
+		years
+		state
