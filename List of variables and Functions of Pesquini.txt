@@ -1,6 +1,6 @@
 List of variables and Functions of Pesquini
 
-Variáveis
+Variables: 
 
 Models:
 	User:
@@ -43,7 +43,7 @@ Models:
 		Integer sanctions_count
 		Float payments_sum
 
-Controllers
+Controllers:
 	Enterprises:
 		search
 		enterprises
@@ -66,3 +66,37 @@ Controllers
 		quantidade
 		years
 		state
+
+Functions:
+	
+Models:
+	Enterprise: 
+		last_sanction
+		last_payment
+		payment_after_sanction?
+		refresh!
+		self.enterprise_position(enterprise)
+		self.most_sanctioned_ranking
+
+	Payment:
+		refresh!
+
+	Sanction:
+		self.all_years
+		refresh!
+		self.percentual_sanction(value)
+
+	Sanction_type:
+		refresh!
+		self.all_sanction_types
+
+	State:
+		refresh!
+		self.all_states
+
+	User:
+		User.new_remember_token
+		User.digest(token)
+
+
+
