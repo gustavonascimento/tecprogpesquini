@@ -13,6 +13,8 @@ Models:
 		Integer code
 		String name
 		String abbreviation
+		s: Receives abbreviation.
+		states: Array of states.
 
 	Sanctions:
 		Date initial_date
@@ -27,6 +29,8 @@ Models:
 		String description
 		String legal_foundation
 		String foundation_description
+		s: receives the description of a sanction.
+		sanction_types: array of descriptions.
 
 	Payments:
 		String identifier
@@ -79,24 +83,25 @@ Models:
 		self.most_sanctioned_ranking
 
 	Payment:
-		refresh!
+		refresh!: returns the payment relationed with its process.
 
 	Sanction:
-		self.all_years
-		refresh!
-		self.percentual_sanction(value)
+		self.all_years: returns the year of the sanction.
+		refresh!: updates the the process number.
+		self.percentual_sanction(value): calculates the percentual for the graphs.
 
 	Sanction_type:
-		refresh!
-		self.all_sanction_types
+		refresh!: updates sanction type description.
+		self.all_sanction_types: returns all the descriptions of the sanctions.
 
 	State:
-		refresh!
-		self.all_states
+		refresh!: updates the abbreviation of the state.
+		self.all_states: returns all states of Brazil in acronymuns.
 
 	User:
-		User.new_remember_token
-		User.digest(token)
+		User.new_remember_token: generates a random key for the user in one session.
+		User.digest(token): encrypts the password.
+		has_secure_password: validates login and password.
 
 
 
