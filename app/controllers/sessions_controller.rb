@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
     if signed_in?
       sign_out 
       redirect_to root_path
+    else
     end
   end
 end
