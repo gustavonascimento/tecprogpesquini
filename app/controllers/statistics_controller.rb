@@ -61,6 +61,7 @@ class StatisticsController < ApplicationController
       ]
       f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
       f.chart({:defaultSeriesType=>"column"})
+    else
     end
   end
 
@@ -92,6 +93,7 @@ class StatisticsController < ApplicationController
     if (!@states)
       @states = @@states_list.clone
       @states.unshift("Todos")
+    else
     end
     respond_to do |format|
       format.html # show.html.erb
