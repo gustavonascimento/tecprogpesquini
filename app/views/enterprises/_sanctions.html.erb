@@ -13,12 +13,15 @@
       <h4>Contrato pós Sanção? :   <span class="glyphicon glyphicon-remove"> </h4>
     <% end %>
     <hr align="left">
- <% end %>
+  <% end %>
 
- <% if @sanctions.empty? %>
-   <h3> Dados sobre sanções não informados </h3>
- <% end %>
- 
- <%= will_paginate @sanctions,  renderer: BootstrapPagination::Rails %>
+  <% if @sanctions.empty? %>
+    <h3> Dados sobre sanções não informados </h3>
+  <% end %>
+  <% else %>
+  <% end %>
+
+
+  <%= will_paginate @sanctions,  renderer:BootstrapPagination::Rails %>
 
 </div>
