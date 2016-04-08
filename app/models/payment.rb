@@ -8,5 +8,4 @@ class Payment < ActiveRecord::Base
     p = Payment.find_by_process_number(self.process_number)
   end
 
-
 end

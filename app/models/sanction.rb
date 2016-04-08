@@ -24,5 +24,4 @@ class Sanction < ActiveRecord::Base
       value * 100.0 / total
   end
 
-
 end	

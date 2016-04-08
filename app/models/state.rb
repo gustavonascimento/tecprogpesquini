@@ -1,4 +1,11 @@
+# File: user.rb
+# Purpouse: The state model
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class State < ActiveRecord::Base
+
   has_many :sanctions
   validates_uniqueness_of :abbreviation
 
