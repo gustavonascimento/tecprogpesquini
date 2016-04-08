@@ -1,4 +1,4 @@
-# File: user.rb
+# File: sanction.rb
 # Purpouse: The sanction model
 # License: GPL v3
 # Group 10 Tecprog

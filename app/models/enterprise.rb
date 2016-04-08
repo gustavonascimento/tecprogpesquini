@@ -1,3 +1,9 @@
+# File: enterprise.rb
+# Purpouse: The enterprise model
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class Enterprise < ActiveRecord::Base
 
   has_many :sanctions

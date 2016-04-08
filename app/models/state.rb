@@ -1,4 +1,4 @@
-# File: user.rb
+# File: state.rb
 # Purpouse: The state model
 # License: GPL v3
 # Group 10 Tecprog
