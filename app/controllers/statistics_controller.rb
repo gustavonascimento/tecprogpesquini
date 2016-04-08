@@ -26,26 +26,34 @@ class StatisticsController < ApplicationController
   end
 
   def most_paymented_ranking
+
     @all = false
+
     if params[:sanjana]
       @all = true
       @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
     else
       @enterprises = Enterprise.featured_payments(10)
     end
+
   end
 
   def enterprise_group_ranking
+
     @quantidade = params[:sanctions_count]
     @enterprises = Enterprise.where(sanctions_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+
   end
 
   def payment_group_ranking
+
     @quantidade = params[:payments_count]
     @enterprises = Enterprise.where(payments_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+  
   end
 
   def sanction_by_state_graph
+
     gon.states = @@states_list
     gon.dados = total_by_state
     titulo = "Gráfico de Sanções por Estado"
@@ -54,7 +62,9 @@ class StatisticsController < ApplicationController
       if(params[:year_].to_i != 0)
          f.title(:text => params[:year_].to_i )
       else
+        #nothing to do
       end
+
       f.xAxis(:categories => @@states_list)
       f.series(:name => "Número de Sanções", :yAxis => 0, :data => total_by_state)
       f.yAxis [
@@ -62,11 +72,14 @@ class StatisticsController < ApplicationController
       ]
       f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
       f.chart({:defaultSeriesType=>"column"})
+
     end
+
   end
 
 
  def sanction_by_type_graph
+
     titulo = "Gráfico Sanções por Tipo"
     @chart = LazyHighCharts::HighChart.new('pie') do |f|
         f.chart({:defaultSeriesType=>"pie" ,:margin=> [50, 10, 10, 10]} )
@@ -94,7 +107,9 @@ class StatisticsController < ApplicationController
       @states = @@states_list.clone
       @states.unshift("Todos")
     else
+      #nothing to do
     end
+
     respond_to do |format|
       format.html # show.html.erb
       format.js
@@ -118,6 +133,7 @@ class StatisticsController < ApplicationController
           if(s.initial_date.year ==  params[:year_].to_i)
             selected_year << s
           else
+            #nothing to do
           end
         end
         results << (selected_year.count)
@@ -142,6 +158,7 @@ class StatisticsController < ApplicationController
       if (params[:state_] && params[:state_] != "Todos")
         sanctions_by_type = sanctions_by_type.where(state_id: state[:id])
       else
+        #nothing to do
       end
       cont = cont + (sanctions_by_type.count)
       results2 << s[1]
