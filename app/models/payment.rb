@@ -1,3 +1,9 @@
+# File: user.rb
+# Purpouse: The payment model
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class Payment < ActiveRecord::Base
 
   belongs_to :enterprise
