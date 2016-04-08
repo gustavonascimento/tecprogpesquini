@@ -1,4 +1,4 @@
-# File: user.rb
+# File: payment.rb
 # Purpouse: The payment model
 # License: GPL v3
 # Group 10 Tecprog

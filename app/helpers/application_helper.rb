@@ -1,3 +1,9 @@
+# File: application_helper.rb
+# Purpouse: The application helper
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 module ApplicationHelper
   def flash_class(level)
     case level
