@@ -5,7 +5,10 @@
     {
       select_b.style.display = "none";
     }
-
+    else
+    {
+    	//nothing to do
+    }
     $('#select_tag').change(function() {
     $(this).closest('form').trigger('submit');
     });
