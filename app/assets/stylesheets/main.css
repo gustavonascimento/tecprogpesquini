@@ -4,53 +4,53 @@
 /********************************************************/
 /* Main Customizations */
 /********************************************************/
-body, html{
+body, html {
   font-family: 'Lato', sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   color: #5a5a5a;
 }
 
-h1{
+h1 {
   text-transform: uppercase;
 }
-h1 strong{
+h1 strong {
   font-weight: 900;
 }
-h2{
+h2 {
   text-transform: uppercase;
   line-height: 20px;
   margin:  0;
 }
-h3{
+h3 {
   font-size: 18px;
   font-weight: 900;
 }
-h4{
+h4 {
   text-transform: uppercase;
 }
-h5{
+h5 {
   text-transform: uppercase;
   font-weight: 700;
   line-height: 20px;
 }
-p{
+p {
   font-family: 'Open Sans', sans-serif;
 }
-p.intro{
+p.intro {
   font-size: 16px;
   margin: 12px 0 0;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
 }
-a{ color: #FCAC45;}
+a { color: #FCAC45;}
 a:hover,
-a:focus{
+a:focus {
   text-decoration: none;
   color: #FCAC45;
 }
 
-.section-title hr{
+.section-title hr {
   border-color: #fcac45;
   border-width: 4px;
   width: 60px;
@@ -146,7 +146,7 @@ ul, ol{
 /* Home */
 /********************************************************/
 
-#tf-home{
+#tf-home {
   /*background: url(../img/01.jpg);*/
   background: url("/assets/Congresso_1.jpg");
   background-size: cover;
@@ -156,7 +156,7 @@ ul, ol{
   color: #cfcfcf;
 }
 
-#tf-home .overlay{
+#tf-home .overlay {
   background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
@@ -167,28 +167,28 @@ ul, ol{
   height: 750px;
   background-attachment: fixed;
 }
-#tf-home p.lead{
+#tf-home p.lead {
   color: #e3e3e3;
 }
 
-.content{
+.content {
   position: relative;
   padding: 150px 0 0;
 }
-.content img{
+.content img {
   max-width:100%;
 }
 
 
-.color{
+.color {
   color: #fcac45;
 }
 
-.color2{
+.color2 {
   color: #003300;
 }
 
-.color3{
+.color3 {
   color: #8F8F00;
 }
 
@@ -200,7 +200,7 @@ ul, ol{
   padding-left: 5px;
   padding-right: 5px;
 }
-.text_pesq_empr{
+.text_pesq_empr {
 
   padding-top: 20px;
 }
@@ -241,17 +241,17 @@ ul, ol{
 /* About */
 /********************************************************/
 
-#tf-about{
+#tf-about {
   padding: 80px 0;
 }
-ul.about-list{ margin: 30px 0 0 ;}
+ul.about-list { margin: 30px 0 0 ;}
 ul.about-list li{
   display: block;
   font-size: 16px;
   line-height: 30px;
   font-family: 'Open Sans', sans-serif;
 }
-ul.about-list li span{ 
+ul.about-list li span { 
   margin-right: 10px;
 }
 
@@ -265,7 +265,7 @@ ul.about-list li span{
 /* Search */
 /********************************************************/
 
-#tf-search{
+#tf-search {
   background: url("/assets/empresa_2.jpg");
   background-size: cover;
   background-position: center;
@@ -273,7 +273,7 @@ ul.about-list li span{
   background-repeat: no-repeat;
   color: #ffffff;
 }
-#tf-search .overlay{
+#tf-search .overlay {
   background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
@@ -285,14 +285,14 @@ ul.about-list li span{
   background-attachment: fixed;
   padding: 80px 0;
 }
-.section-title.center{
+.section-title.center {
   padding: 30px 0;
 }
 .section-title h2,
-.section-title.center h2{
+.section-title.center h2 {
   font-weight: 300;
 }
-.section-title.center .line{
+.section-title.center .line {
   border-top: 4px solid #fcac45;
   height: 10px;
   width: 60px;
@@ -336,7 +336,7 @@ img.img-circle.search-img {
   color: #F2F2F2;
 }
 
-#tf-search .thumbnail .caption hr{
+#tf-search .thumbnail .caption hr {
   border-color: #fcac45;
 }
 
@@ -360,7 +360,7 @@ img.img-circle.search-img {
   opacity: 1;
   background: #FCAC45;
 }
-.owl-theme .owl-controls .owl-page.active span{
+.owl-theme .owl-controls .owl-page.active span {
   background: #FCAC45;
 }
 
@@ -375,11 +375,11 @@ img.img-circle.search-img {
 /* Services */
 /********************************************************/
 
-#tf-services{
+#tf-services {
   padding: 80px 0;
 }
 
-.space{
+.space {
   margin-top: 40px;
 }
 
@@ -394,11 +394,11 @@ img.img-circle.search-img {
   transition: all 0.5s;
 }
 
-#tf-services a{
+#tf-services a {
   color: #5a5a5a;
 }
 
-#tf-services a:hover>i.fa{
+#tf-services a:hover>i.fa {
   background: #FCAC45;
   color: #ffffff;
 }
@@ -416,7 +416,7 @@ img.img-circle.search-img {
 /* Clients */
 /********************************************************/
 
-#tf-clients{
+#tf-clients {
   background: url("/assets/bandeira_brasil.jpg");
   background-size: cover;
   background-position: center;
@@ -425,7 +425,7 @@ img.img-circle.search-img {
   color: #ffffff;
 }
 
-#tf-clients .overlay{
+#tf-clients .overlay {
   background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
@@ -444,34 +444,34 @@ img.img-circle.search-img {
     text-align: center;
 }
 */
-#tf-clients hr{
+#tf-clients hr {
   border-color: #fcac45;
   border-width: 4px;
   width: 100px;
 }
-#tf-clients .about_us{
+#tf-clients .about_us {
   padding-top: 40px;
 }
-/********************************************************/
+
 /* End */
-/********************************************************/
 
 
-/********************************************************/
+
+
 /* Footer */
-/********************************************************/
 
-nav#footer{
+
+nav#footer {
   background: #222222;
   color: #ffffff;
   padding: 20px 0 15px 0;
 }
-nav#footer .fnav{ vertical-align: middle;}
+nav#footer .fnav { vertical-align: middle;}
 ul.footer-social li{
   display: inline-block;
   margin-right: 10px;
 }
-nav#footer p{
+nav#footer p {
   font-size: 12px;
   margin-top: 10px;
 }
@@ -485,7 +485,7 @@ nav#footer p{
   color: #8c8c8c;
   transition: all 0.5s;
 }
-#footer i.fa:hover{
+#footer i.fa:hover {
   background: #FCAC45;
   border-color: #FCAC45;
   color: #ffffff;
@@ -507,18 +507,18 @@ body > .padding-page-top {
 }
 
 .padding-page-top { padding-bottom: 5em; }
-/********************************************************/
+
 /* End */
-/********************************************************/
 
 
 
-/********************************************************/
+
+
 /* Navigation */
-/********************************************************/
 
 
-/********************************************************/
+
+
 /* End */
-/********************************************************/
+
 
