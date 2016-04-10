@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+
     login = params[:session][:login].downcase
     password = params[:session][:password]
     user = User.find_by(login: login)
@@ -16,13 +17,18 @@ class SessionsController < ApplicationController
       flash[:error] = "Login ou senha invalidos!"
       render :new
     end
+
   end
 
   def destroy
+
     if signed_in?
       sign_out 
       redirect_to root_path
     else
+      # nothing to do
     end
+
   end
+
 end

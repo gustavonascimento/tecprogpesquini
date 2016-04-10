@@ -1,7 +1,7 @@
 class StatisticsController < ApplicationController
 
 
-######################################################
+
 # Declarações de variáveis Globais
 
 @@states_list = State.all_states
@@ -11,10 +11,11 @@ class StatisticsController < ApplicationController
 @@sanction_type_list = SanctionType.all_sanction_types
 
 
-######################################################
+
 # Métodos da controller
 
   def  index
+    
   end
 
   def most_sanctioned_ranking
@@ -118,10 +119,11 @@ class StatisticsController < ApplicationController
   end
 
 
-######################################################
+
 # Métoodos auxiliares
 
   def total_by_state()
+
     results = []
     @years = @@sanjana
     @@states_list.each do |s|
@@ -142,10 +144,12 @@ class StatisticsController < ApplicationController
       end
     end
     results
+
   end
 
 
   def total_by_type()
+
     results = []
     results2 = []
     cont = 0
@@ -176,5 +180,7 @@ class StatisticsController < ApplicationController
     results << results2
     results = results.sort_by { |i| i[0] }
     results
+
   end
+
 end

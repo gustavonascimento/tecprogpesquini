@@ -1,5 +1,6 @@
 class EnterprisesController < ApplicationController
   def index
+
     if params[:q].nil?
       @search = Enterprise.search(params[:q].try(:merge, m: 'or'))
       @enterprises = Enterprise.paginate(:page => params[:page], :per_page => 10)
@@ -8,9 +9,11 @@ class EnterprisesController < ApplicationController
       @search = Enterprise.search(params[:q].try(:merge, m: 'or'))
       @enterprises = @search.result.paginate(:page => params[:page], :per_page => 10)
     end
+
   end
 
   def show
+
     @per_page = 10
     @page_num = params[:page].to_i > 0 ? params[:page].to_i  - 1 : 0
     @enterprise = Enterprise.find(params[:id])
@@ -19,14 +22,19 @@ class EnterprisesController < ApplicationController
     @sanctions = @collection.paginate(:page => params[:page], :per_page => @per_page)
     @payment_position = enterprise_payment_position(@enterprise)
     @position = Enterprise.enterprise_position(@enterprise)
+
   end
 
   def enterprise_payment_position(enterprise)
+
     p = Enterprise.featured_payments  
       p.each_with_index do |a, index|
         if a.payments_sum == enterprise.payments_sum
           return index + 1 
+        else
+          # nothing to do
         end
       end
+
     end
   end

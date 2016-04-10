@@ -1,5 +1,6 @@
 class CreateSanctions < ActiveRecord::Migration
 	def change
+
 		create_table :sanctions do |t|
 			t.date :initial_date
 			t.date :final_date
@@ -7,6 +8,7 @@ class CreateSanctions < ActiveRecord::Migration
 			t.belongs_to :enterprise
 			t.belongs_to :sanction_type
 			t.belongs_to :state
+			
 		end
 	end
 end
