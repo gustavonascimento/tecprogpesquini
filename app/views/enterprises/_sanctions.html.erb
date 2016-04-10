@@ -18,9 +18,6 @@
   <% if @sanctions.empty? %>
     <h3> Dados sobre sanções não informados </h3>
   <% end %>
-  <% else %>
-    <!--nothing to do -->
-  <% end %>
 
 
   <%= will_paginate @sanctions,  renderer:BootstrapPagination::Rails %>

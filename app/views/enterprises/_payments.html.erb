@@ -13,9 +13,7 @@
       <% if @payments.empty? %>
         <h3> Dados sobre pagamentos não informados </h3>
       <% end %>
-      <% else %>
-        <!--nothing to do -->
-      <% end %>
+
       <%= will_paginate @payments,  renderer: BootstrapPagination::Rails %>
 
       </div>
