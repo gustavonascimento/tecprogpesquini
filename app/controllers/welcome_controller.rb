@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
   def index
 
     params[:q][:cnpj_eq] = params[:q][:corporate_name_cont] unless params[:q].nil?
@@ -6,4 +7,5 @@ class WelcomeController < ApplicationController
     @enterprises = @search.result
     
   end
+  
 end

@@ -1,4 +1,5 @@
 class EnterprisesController < ApplicationController
+
   def index
 
     if params[:q].nil?
@@ -37,4 +38,5 @@ class EnterprisesController < ApplicationController
       end
 
     end
+    
   end
