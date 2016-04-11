@@ -1,3 +1,9 @@
+# File: session_controller.rb
+# Purpouse: Controls the actions relative to the session model.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class SessionsController < ApplicationController
 
   def new

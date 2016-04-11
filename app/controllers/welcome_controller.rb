@@ -1,3 +1,9 @@
+# File: welcome_controller.rb
+# Purpouse: Controls the actions relative to the welcome model.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class WelcomeController < ApplicationController
 
   def index

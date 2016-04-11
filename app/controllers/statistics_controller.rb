@@ -1,6 +1,10 @@
+# File: statistics_controller.rb
+# Purpouse: Controls the actions relative to the statistics model.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class StatisticsController < ApplicationController
-
-
 
 # Declarações de variáveis Globais
 

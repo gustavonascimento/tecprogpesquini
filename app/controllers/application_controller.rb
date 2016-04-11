@@ -1,3 +1,9 @@
+# File: application_controller.rb
+# Purpouse: Allows the integration between controllers and views
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class ApplicationController < ActionController::Base
   
   include SessionsHelper
