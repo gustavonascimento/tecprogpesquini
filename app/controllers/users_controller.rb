@@ -6,8 +6,10 @@
 
 class UsersController < ApplicationController
 
+  # makes a new user
   def new
 
+  	# stores the user.
     @user = User.new
     
   end

@@ -1,5 +1,5 @@
 # File: sanction_type.rb
-# Purpouse: The sanction_type model
+# Purpouse: The sanction_type model, stores all the information about the types of sanctions used.
 # License: GPL v3
 # Group 10 Tecprog
 # FGA - Universidade de Brasília - Campus Gama
@@ -9,14 +9,18 @@ class SanctionType < ActiveRecord::Base
 	has_many :sanctions
 	validates_uniqueness_of :description
 
+	# refresh the enterprises by sanction type.
 	def refresh!
 
+		# stores the sanction found in the search.
 		s = SanctionType.find_by_description(self.description)
 
 	end
 
+	# informs all the types of sanctions.
 	def self.all_sanction_types
 
+		#stores all the sanction types.
 		stantion_types = [
 		[ "INIDONEIDADE - LEGISLAçãO ESTADUAL", "Inidoneidade - Legislação Estadual"],
 		[ "IMPEDIMENTO - LEI DO PREGãO", "Impedimento - Lei do Pregão"],

@@ -6,14 +6,21 @@
 
 class SessionsController < ApplicationController
 
+  # empty method.
   def new
 
   end
 
+  # creates a session.
   def create
 
+    # receives the parameters necessary to login.
     login = params[:session][:login].downcase
+
+    # stores a password for the login.
     password = params[:session][:password]
+
+    # stores the user login in that session.
     user = User.find_by(login: login)
 
     if user && user.authenticate(password)
@@ -26,6 +33,7 @@ class SessionsController < ApplicationController
 
   end
 
+  # destroys the session.
   def destroy
 
     if signed_in?

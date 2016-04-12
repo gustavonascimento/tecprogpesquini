@@ -7,21 +7,26 @@
 class StatisticsController < ApplicationController
 
 # Declarações de variáveis Globais
-
+  
+# list that saves all the states.
 @@states_list = State.all_states
 
+# list that saves all the years.
 @@sanjana = Sanction.all_years
 
+# liist that saves all the sanctions.
 @@sanction_type_list = SanctionType.all_sanction_types
 
 
 
 # Métodos da controller
-
+  
+  # empty method.
   def  index
     
   end
 
+  # manipulates the data of the enterprises with more sanctions.
   def most_sanctioned_ranking
 
     enterprise_group_array = Enterprise.most_sanctioned_ranking
@@ -30,6 +35,7 @@ class StatisticsController < ApplicationController
 
   end
 
+  # manipulates the data of the most paid enterprises.
   def most_paymented_ranking
 
     @all = false
@@ -43,6 +49,7 @@ class StatisticsController < ApplicationController
 
   end
 
+  # aggregates the enterprises by the group it belongs
   def enterprise_group_ranking
 
     @quantidade = params[:sanctions_count]
@@ -50,6 +57,7 @@ class StatisticsController < ApplicationController
 
   end
 
+  # aggregates the payments by the group it belongs
   def payment_group_ranking
 
     @quantidade = params[:payments_count]
@@ -57,6 +65,7 @@ class StatisticsController < ApplicationController
   
   end
 
+  # manipulate data to build the graphic of sanctions by state.
   def sanction_by_state_graph
 
     gon.states = @@states_list
@@ -82,7 +91,7 @@ class StatisticsController < ApplicationController
 
   end
 
-
+ # manipulate data to build the graphic of sanctions by type.
  def sanction_by_type_graph
 
     titulo = "Gráfico Sanções por Tipo"
@@ -124,8 +133,9 @@ class StatisticsController < ApplicationController
 
 
 
-# Métoodos auxiliares
-
+# Métodos auxiliares
+    
+  # shows the total of sanctions by state.
   def total_by_state()
 
     results = []
@@ -151,7 +161,7 @@ class StatisticsController < ApplicationController
 
   end
 
-
+  # shows the total of sanctions by it type.
   def total_by_type()
 
     results = []
