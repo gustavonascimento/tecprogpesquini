@@ -1,5 +1,5 @@
 # File: enterprise.rb
-# Purpouse: The enterprise model
+# Purpouse: The enterprise model, informs all the details on enterprises.
 # License: GPL v3
 # Group 10 Tecprog
 # FGA - Universidade de Brasília - Campus Gama
@@ -13,7 +13,8 @@ class Enterprise < ActiveRecord::Base
   scope :featured_sanctions, ->(number=nil){number ? order('sanctions_count DESC').limit(number) :order('sanctions_count DESC')}
   scope :featured_payments, -> (number=nil){number ? order('payments_sum DESC').limit(number) :order('payments_sum DESC')}
 
-   def last_sanction
+  # informs the last sanctions suffered from the enterprise.
+  def last_sanction
     
     sanction = self.sanctions.last
       unless sanction.nil?    
@@ -25,6 +26,7 @@ class Enterprise < ActiveRecord::Base
 
   end
 
+  # informs the last payment received by the enterprise.
   def last_payment
     
     payment = self.payments.last
@@ -37,6 +39,7 @@ class Enterprise < ActiveRecord::Base
 
   end
 
+  #  tells if there were any payments after a sanction.
   def payment_after_sanction?
     
     sanction = last_sanction
@@ -50,12 +53,15 @@ class Enterprise < ActiveRecord::Base
 
   end
 
+  # refresh the enterprises searched by CNPJ.
   def refresh!
     
     e = Enterprise.find_by_cnpj(self.cnpj)
   
   end
 
+
+  # organizes the enterprises position accordingly to the amount of sanctions suffered.
   def self.enterprise_position(enterprise)
 
       orderedSanc = self.featured_sanctions
@@ -69,6 +75,7 @@ class Enterprise < ActiveRecord::Base
 
   end
 
+  # shows that the most sanctioned companies.
   def self.most_sanctioned_ranking
     
     enterprise_group = []

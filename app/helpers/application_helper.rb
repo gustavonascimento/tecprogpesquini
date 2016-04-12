@@ -5,6 +5,7 @@
 # FGA - Universidade de Brasília - Campus Gama
 
 module ApplicationHelper
+	
   def flash_class(level)
 
     case level
