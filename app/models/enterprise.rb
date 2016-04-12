@@ -14,40 +14,50 @@ class Enterprise < ActiveRecord::Base
   scope :featured_payments, -> (number=nil){number ? order('payments_sum DESC').limit(number) :order('payments_sum DESC')}
 
    def last_sanction
+    
     sanction = self.sanctions.last
-    unless sanction.nil?    
-      self.sanctions.each do |s|
-        sanction = s if s.initial_date > sanction.initial_date
+      unless sanction.nil?    
+        self.sanctions.each do |s|
+          sanction = s if s.initial_date > sanction.initial_date
+        end
       end
-    end
-    sanction
+    return sanction
+
   end
 
   def last_payment
+    
     payment = self.payments.last
-    unless payment.nil?
-      self.payments.each do |f|
-        payment = f if f.sign_date > payment.sign_date
+      unless payment.nil?
+        self.payments.each do |f|
+          payment = f if f.sign_date > payment.sign_date
+        end
       end
-    end
-    payment
+    return payment
+
   end
 
   def payment_after_sanction?
+    
     sanction = last_sanction
     payment = last_payment
-    if sanction && payment
-      payment.sign_date < sanction.initial_date
-    else
-      false
-    end
+      
+      if sanction && payment
+        payment.sign_date < sanction.initial_date
+      else
+        false
+      end
+
   end
 
   def refresh!
+    
     e = Enterprise.find_by_cnpj(self.cnpj)
+  
   end
 
   def self.enterprise_position(enterprise)
+
       orderedSanc = self.featured_sanctions
       groupedSanc = orderedSanc.uniq.group_by(&:sanctions_count).to_a
 
@@ -56,9 +66,11 @@ class Enterprise < ActiveRecord::Base
           return index + 1
         end
       end
+
   end
 
   def self.most_sanctioned_ranking
+    
     enterprise_group = []
     enterprise_group_count = []
     @enterprise_group_array = []
@@ -72,8 +84,7 @@ class Enterprise < ActiveRecord::Base
       @enterprise_group_array << enterprise_group
       @enterprise_group_array << enterprise_group_count
       @enterprise_group_array
+  
   end
-
-
 
 end

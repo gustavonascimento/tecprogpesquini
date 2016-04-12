@@ -10,10 +10,13 @@ class SanctionType < ActiveRecord::Base
 	validates_uniqueness_of :description
 
 	def refresh!
+
 		s = SanctionType.find_by_description(self.description)
+
 	end
 
 	def self.all_sanction_types
+
 		stantion_types = [
 		[ "INIDONEIDADE - LEGISLAçãO ESTADUAL", "Inidoneidade - Legislação Estadual"],
 		[ "IMPEDIMENTO - LEI DO PREGãO", "Impedimento - Lei do Pregão"],
@@ -33,6 +36,7 @@ class SanctionType < ActiveRecord::Base
 		]
 
 		return stantion_types
+		
 	end
 	
 end

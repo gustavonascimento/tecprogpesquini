@@ -47,4 +47,5 @@ module SessionsHelper
     self.current_user = nil
     
   end
+  
 end
