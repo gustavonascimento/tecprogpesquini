@@ -43,15 +43,15 @@ class Parser::ParserCeiController < Parser::ParserController
   end
 
   def build_state(row_data)
-    s = State.new
-    s.abbreviation = check_nil_ascii(row_data["UF Órgão Sancionador"])
-    check_and_save(s)
+    uf = State.new
+    uf.abbreviation = check_nil_ascii(row_data["UF Órgão Sancionador"])
+    check_and_save(uf)
   end
 
   def build_sanction_type(row_data)
-    s = SanctionType.new
-    s.description = check_nil_ascii(row_data["Tipo Sanção"])
-    check_and_save(s)
+    sanction = SanctionType.new
+    sanction.description = check_nil_ascii(row_data["Tipo Sanção"])
+    check_and_save(sanction)
   end
 
   def build_enterprise(row_data)
