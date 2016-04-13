@@ -33,7 +33,7 @@ class Sanction < ActiveRecord::Base
 
   end
 
-  #calculates the percentage of sanctions for the graphs.
+  # calculates the percentage of sanctions for the graphs.
   def self.percentual_sanction(value)
 
       # it's the number of total of sanctions.

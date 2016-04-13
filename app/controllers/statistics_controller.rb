@@ -6,7 +6,7 @@
 
 class StatisticsController < ApplicationController
 
-# Declarações de variáveis Globais
+# global variables
   
 # list that saves all the states.
 @@states_list = State.all_states
@@ -16,10 +16,6 @@ class StatisticsController < ApplicationController
 
 # liist that saves all the sanctions.
 @@sanction_type_list = SanctionType.all_sanction_types
-
-
-
-# Métodos da controller
   
   # empty method.
   def  index
@@ -130,10 +126,6 @@ class StatisticsController < ApplicationController
     end
 
   end
-
-
-
-# Métodos auxiliares
     
   # shows the total of sanctions by state.
   def total_by_state()

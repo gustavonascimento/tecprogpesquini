@@ -10,7 +10,7 @@ class EnterprisesController < ApplicationController
   def index
 
     if params[:q].nil?
-      # Used to keep the result of a search of a enterprise.
+      # used to keep the result of a search of a enterprise.
       @search = Enterprise.search(params[:q].try(:merge, m: 'or'))
       # shows the result of the search.
       @enterprises = Enterprise.paginate(:page => params[:page], :per_page => 10)

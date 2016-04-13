@@ -20,7 +20,7 @@ class SanctionType < ActiveRecord::Base
 	# informs all the types of sanctions.
 	def self.all_sanction_types
 
-		#stores all the sanction types.
+		# stores all the sanction types.
 		stantion_types = [
 		[ "INIDONEIDADE - LEGISLAçãO ESTADUAL", "Inidoneidade - Legislação Estadual"],
 		[ "IMPEDIMENTO - LEI DO PREGãO", "Impedimento - Lei do Pregão"],
