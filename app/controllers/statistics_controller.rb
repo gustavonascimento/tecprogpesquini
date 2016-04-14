@@ -14,7 +14,7 @@ class StatisticsController < ApplicationController
 # list that saves all the years.
 @@sanjana = Sanction.all_years
 
-# liist that saves all the sanctions.
+# list that saves all the sanctions.
 @@sanction_type_list = SanctionType.all_sanction_types
   
   # empty method.

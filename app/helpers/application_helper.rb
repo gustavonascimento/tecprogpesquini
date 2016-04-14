@@ -6,6 +6,7 @@
 
 module ApplicationHelper
 	
+	# method to controll the style of alerts of the system
   def flash_class(level)
 
     case level
