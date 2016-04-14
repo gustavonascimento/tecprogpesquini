@@ -82,38 +82,38 @@ class Parser::ParserCeiController < Parser::ParserController
   # takes the value regarding the enterprise from the file and puts it on a variable.
   def build_enterprise(row_data)
 
-    e = Enterprise.new
-    e.cnpj = row_data["CPF ou CNPJ do Sancionado"]
-    # e.trading_name = check_nil_ascii(row_data["Nome Fantasia - Cadastro Receita"])
-    e.corporate_name = check_nil_ascii(row_data["Razão Social - Cadastro Receita"])
-    check_and_save(e)
+    enterprise = Enterprise.new
+    enterprise.cnpj = row_data["CPF ou CNPJ do Sancionado"]
+    # enterprise.trading_name = check_nil_ascii(row_data["Nome Fantasia - Cadastro Receita"])
+    enterprise.corporate_name = check_nil_ascii(row_data["Razão Social - Cadastro Receita"])
+    check_and_save(enterprise)
 
   end
 
   # takes the value regarding the sanction from the file and puts it on a variable.
   def build_sanction(row_data, sanction_type, state, enterprise)
 
-    s = Sanction.new
-    s.initial_date = check_date(row_data["Data Início Sanção"])
-    s.final_date = check_date(row_data["Data Final Sanção"])
-    s.process_number = check_nil_ascii(row_data["Número do processo"])
-    s.enterprise_id = enterprise.id
-    s.sanction_type_id = sanction_type.id
-    s.sanction_organ = check_nil_ascii(row_data["Órgão Sancionador"])
-    s.state_id = state.id
-    check_and_save(s)
+    sanction = Sanction.new
+    sanction.initial_date = check_date(row_data["Data Início Sanção"])
+    sanction.final_date = check_date(row_data["Data Final Sanção"])
+    anction.process_number = check_nil_ascii(row_data["Número do processo"])
+    sanction.enterprise_id = enterprise.id
+    sanction.sanction_type_id = sanction_type.id
+    sanction.sanction_organ = check_nil_ascii(row_data["Órgão Sancionador"])
+    sanction.state_id = state.id
+    check_and_save(sanction)
 
   end
 
   # checks and save the data from the file.
-  def check_and_save(c)
+  def check_and_save(data)
 
     begin
-      c.save!
-      c
+      data.save!
+      data
     rescue ActiveRecord::RecordInvalid
-      c = c.refresh!
-      c
+      data = data.refresh!
+      data
 
     end
 
