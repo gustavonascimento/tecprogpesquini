@@ -1,3 +1,9 @@
+# File: parser_payment_controller.rb
+# Purpouse: Does the parser of payment with the file in the csv format.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class Parser::ParserPaymentController < Parser::ParserController
 
   require 'csv'
@@ -13,7 +19,9 @@ class Parser::ParserPaymentController < Parser::ParserController
 
   end
 
+  # checks the value of the payment taken of the file.
   def check_value(text)
+
     #this method recieves a string representing a payment value in the format 19,470.99
     #Then it takes off the comma (",") and parse it to float format as 19470.99
      begin
@@ -21,9 +29,12 @@ class Parser::ParserPaymentController < Parser::ParserController
     rescue
       return nil
     end
+
   end
 
+  # imports the parser file.
   def import()
+
     constante = 0
     Enterprise.find_each do |e|
 
@@ -51,9 +62,12 @@ class Parser::ParserPaymentController < Parser::ParserController
     end
     puts "="*50
     puts "Quantidade de empresas sem pagamentos: ", constante
+
   end
 
+  # checks and save the data from the file.
   def check_and_save(c)
+
     begin
       c.save!
       c
@@ -61,5 +75,7 @@ class Parser::ParserPaymentController < Parser::ParserController
       c = c.refresh!
       c
     end
+    
   end
+
 end
