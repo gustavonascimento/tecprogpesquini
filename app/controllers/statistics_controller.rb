@@ -132,11 +132,13 @@ class StatisticsController < ApplicationController
 
     results = []
     @years = @@sanjana
+
     @@states_list.each do |s|
       state = State.find_by_abbreviation("#{s}")
       sanctions_by_state = Sanction.where(state_id: state[:id])
       selected_year = []
       if(params[:year_].to_i != 0)
+
         sanctions_by_state.each do |s|
           if(s.initial_date.year ==  params[:year_].to_i)
             selected_year << s
@@ -144,12 +146,14 @@ class StatisticsController < ApplicationController
             #nothing to do
           end
         end
+
         results << (selected_year.count)
       else
         results << (sanctions_by_state.count)
       end
     end
-    results
+
+     return results
 
   end
 
@@ -185,7 +189,7 @@ class StatisticsController < ApplicationController
     results2 << (total - cont)
     results << results2
     results = results.sort_by { |i| i[0] }
-    results
+    return results
 
   end
 
