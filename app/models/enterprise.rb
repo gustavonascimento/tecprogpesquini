@@ -19,9 +19,15 @@ class Enterprise < ActiveRecord::Base
   def last_sanction
     
     sanction = self.sanctions.last
-      unless sanction.nil?    
+      unless sanction.nil?
+
         self.sanctions.each do |s|
-          sanction = s if s.initial_date > sanction.initial_date
+          if s.initial_date > sanction.initial_date
+            sanction = s
+          else
+          # nothing to do
+          end 
+
         end
       end
     return sanction
@@ -34,7 +40,11 @@ class Enterprise < ActiveRecord::Base
     payment = self.payments.last
       unless payment.nil?
         self.payments.each do |f|
-          payment = f if f.sign_date > payment.sign_date
+          if f.sign_date > payment.sign_date
+            payment = f 
+          else
+            # nothing to do
+          end
         end
       end
     return payment
@@ -59,7 +69,7 @@ class Enterprise < ActiveRecord::Base
   def refresh!
 
     # stores all the enterprises that have been searched in this method .
-    e = Enterprise.find_by_cnpj(self.cnpj)
+    enterprises_return_search = Enterprise.find_by_cnpj(self.cnpj)
   
   end
 
