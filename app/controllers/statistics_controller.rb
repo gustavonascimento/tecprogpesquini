@@ -133,20 +133,19 @@ class StatisticsController < ApplicationController
     results = []
     @years = @@sanjana
 
-    @@states_list.each do |s|
-      state = State.find_by_abbreviation("#{s}")
+    @@states_list.each do |state_item|
+      state = State.find_by_abbreviation("#{state_item}")
       sanctions_by_state = Sanction.where(state_id: state[:id])
       selected_year = []
       if(params[:year_].to_i != 0)
 
-        sanctions_by_state.each do |s|
-          if(s.initial_date.year ==  params[:year_].to_i)
-            selected_year << s
+        sanctions_by_state.each do |sanction|
+          if(sanction.initial_date.year ==  params[:year_].to_i)
+            selected_year << sanction
           else
             #nothing to do
           end
         end
-
         results << (selected_year.count)
       else
         results << (sanctions_by_state.count)
@@ -166,8 +165,8 @@ class StatisticsController < ApplicationController
 
     state = State.find_by_abbreviation(params[:state_])
 
-    @@sanction_type_list.each do |s|
-      sanction = SanctionType.find_by_description(s[0])
+    @@sanction_type_list.each do |sanction_type|
+      sanction = SanctionType.find_by_description(sanction_type[0])
       sanctions_by_type = Sanction.where(sanction_type:  sanction)
       if (params[:state_] && params[:state_] != "Todos")
         sanctions_by_type = sanctions_by_type.where(state_id: state[:id])
@@ -175,7 +174,7 @@ class StatisticsController < ApplicationController
         #nothing to do
       end
       cont = cont + (sanctions_by_type.count)
-      results2 << s[1]
+      results2 << sanction_type[1]
       results2 << (sanctions_by_type.count)
       results << results2
       results2 = []
