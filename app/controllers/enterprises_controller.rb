@@ -55,8 +55,8 @@ class EnterprisesController < ApplicationController
   def enterprise_payment_position(enterprise)
 
     # stores the featured paymensts of the enterprise.
-    p = Enterprise.featured_payments  
-      p.each_with_index do |a, index|
+    payments = Enterprise.featured_payments  
+      payments.each_with_index do |a, index|
         if a.payments_sum == enterprise.payments_sum
           return index + 1 
         else
