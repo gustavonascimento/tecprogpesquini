@@ -12,7 +12,7 @@ function main() {
       $(document).ready(function() {
 
         /*var welcome = document.getElementById('tf-home');*/
-        if (document.getElementById('tf-home')  == null){
+        if (document.getElementById('tf-home')  == null) {
 
           $('.navbar-default').addClass('on');
 

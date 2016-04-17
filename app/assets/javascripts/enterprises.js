@@ -6,15 +6,15 @@
   var sanctions_btn = document.getElementById("sanction-info-btn");
   var payments_btn = document.getElementById("payment-info-btn");
 
-  if ($(sanctions_btn).hasClass("active")){
+  if ($(sanctions_btn).hasClass("active")) {
 
-    if (payments[0]){
+    if (payments[0]) { 
 
       payments[0].style.display = "none";
 
     }
 
-    else{
+    else {
 
       //nothing to do
 
