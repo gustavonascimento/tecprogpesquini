@@ -1,7 +1,7 @@
-
-  function main() {
+function main() {
 
   (function () {
+
      'use strict';
 
 
@@ -10,37 +10,48 @@
       ======================================*/
 
       $(document).ready(function() {
-      /*var welcome = document.getElementById('tf-home');*/
-      if (document.getElementById('tf-home')  == null)
-      {
-        $('.navbar-default').addClass('on');
-      }
-      else
-      {
-        $('.navbar-default').removeClass('on');
-      
 
-        $(window).bind('scroll', function() {
-            var navHeight = $(window).height() - 100;
-            if ($(window).scrollTop() > navHeight)
-            {
-                $('.navbar-default').addClass('on');
-            } 
-            else 
-            {
-                $('.navbar-default').removeClass('on');
-            }
-        });
+        /*var welcome = document.getElementById('tf-home');*/
+        if (document.getElementById('tf-home')  == null){
+
+          $('.navbar-default').addClass('on');
 
         }
+
+        else {
+
+          $('.navbar-default').removeClass('on');
+        
+          $(window).bind('scroll', function() {
+
+              var navHeight = $(window).height() - 100;
+
+              if ($(window).scrollTop() > navHeight) {
+
+                  $('.navbar-default').addClass('on');
+
+              } 
+
+              else {
+
+                  $('.navbar-default').removeClass('on');
+
+              }
+          });
+
+          }
+
       });
 
       $('body').scrollspy({ 
+
           target: '.navbar-default',
           offset: 80
+
       })
 
     	$(document).ready(function() {
+        
     	  $("#search").owlCarousel({
     	 
     	      navigation : false, // Show next and prev buttons
