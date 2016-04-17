@@ -83,6 +83,8 @@ class Enterprise < ActiveRecord::Base
       groupedSanc.each_with_index do |k,index|
         if k[0] == enterprise.sanctions_count
           return index + 1
+        else
+          # nothing to do
         end
       end
 
