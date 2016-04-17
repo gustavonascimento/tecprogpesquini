@@ -1,3 +1,9 @@
+# File: state_spec.rb
+# Purpouse: Makes a unit test for the state model
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 require 'spec_helper'
 require 'rails_helper'
 

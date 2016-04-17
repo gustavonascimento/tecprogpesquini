@@ -1,4 +1,4 @@
-# File: application_controller_spec.rb
+# File: statistics_controller_spec.rb
 # Purpouse: Makes a unit test for the statistics controller
 # License: GPL v3
 # Group 10 Tecprog

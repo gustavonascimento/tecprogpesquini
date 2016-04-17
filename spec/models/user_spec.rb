@@ -1,3 +1,9 @@
+# File: user_spec.rb
+# Purpouse: Makes a unit test for the user model.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do 
