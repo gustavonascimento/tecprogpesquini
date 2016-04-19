@@ -17,11 +17,13 @@
   border-radius: 50%;
   transition: all 0.5s;
 }
+
 #enterprises_index .service {
   padding-top: 20px;
   float: center;
   clear: both;
 }
+
 #enterprises_index i.fa:hover {
   background: #FCAC45;
   color: #ffffff;
