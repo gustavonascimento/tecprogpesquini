@@ -70,7 +70,7 @@ function main() {
   				      ],
     	  });
 
-    	  $("#clients").owlCarousel({
+    	  $("#clients").owlCarousel( {
     	 
     	      navigation : false, // Show next and prev buttons
     	      slideSpeed : 300,

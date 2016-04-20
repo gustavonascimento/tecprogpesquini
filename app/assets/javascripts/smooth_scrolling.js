@@ -14,7 +14,8 @@ $(function() {
         }, 1000);
         return false;
       
-      } else {
+      } 
+      else {
         //nothig to do
       
       }

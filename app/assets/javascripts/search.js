@@ -11,7 +11,7 @@
   
   else {
     
-    //nothig to do
+    //nothing to do
   
   }
 
