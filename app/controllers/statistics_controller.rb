@@ -25,6 +25,10 @@ class StatisticsController < ApplicationController
   # manipulates the data of the enterprises with more sanctions.
   def most_sanctioned_ranking
 
+    Precondition.check_not_nil(enterprise_group_array)
+    Precondition.check_not_nil(enterprise_group_count)
+    Precondition.check_not_nil(enterprise_group)
+    
     enterprise_group_array = Enterprise.most_sanctioned_ranking
     @enterprise_group = enterprise_group_array[0]
     @enterprise_group_count = enterprise_group_array[1]
