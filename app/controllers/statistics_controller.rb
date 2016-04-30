@@ -6,16 +6,16 @@
 
 class StatisticsController < ApplicationController
 
-# global variables
+  # global variables
   
-# list that saves all the states.
-@@states_list = State.all_states
+  # list that saves all the states.
+  @@states_list = State.all_states
 
-# list that saves all the years.
-@@sanjana = Sanction.all_years
+  # list that saves all the years.
+  @@sanjana = Sanction.all_years
 
-# list that saves all the sanctions.
-@@sanction_type_list = SanctionType.all_sanction_types
+  # list that saves all the sanctions.
+  @@sanction_type_list = SanctionType.all_sanction_types
   
   # empty method.
   def  index

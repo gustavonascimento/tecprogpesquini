@@ -7,8 +7,7 @@
 class Parser::ParserCeiController < Parser::ParserController
 
   require 'csv'
-  require 'test/unit'
-  extend Test::Unit::Assertions
+
   @@filename = 'parser_data/CEIS.csv'
 
   before_filter :authorize, only: [:check_nil_ascii, :check_date, :import, 
