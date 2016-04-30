@@ -4,6 +4,8 @@
 # Group 10 Tecprog
 # FGA - Universidade de Brasília - Campus Gama
 
+
+
 class StatisticsController < ApplicationController
 
   # global variables
@@ -152,7 +154,9 @@ class StatisticsController < ApplicationController
       end
     end
 
-     return results
+    assert results.empty?, "List can't be empty"
+
+    return results
 
   end
 
@@ -166,28 +170,38 @@ class StatisticsController < ApplicationController
     state = State.find_by_abbreviation(params[:state_])
 
     @@sanction_type_list.each do |sanction_type|
+      
       sanction = SanctionType.find_by_description(sanction_type[0])
       sanctions_by_type = Sanction.where(sanction_type:  sanction)
+      
       if (params[:state_] && params[:state_] != "Todos")
         sanctions_by_type = sanctions_by_type.where(state_id: state[:id])
       else
         #nothing to do
       end
+      
       cont = cont + (sanctions_by_type.count)
       results2 << sanction_type[1]
       results2 << (sanctions_by_type.count)
       results << results2
       results2 = []
+
+      assert results2.empty?, "list2 can not be empty"
+    
     end
+    
     results2 << "Não Informado"
       if (params[:state_] && params[:state_] != "Todos")
         total =Sanction.where(state_id: state[:id] ).count
       else
         total = Sanction.count
       end
+    
     results2 << (total - cont)
     results << results2
     results = results.sort_by { |i| i[0] }
+    
+    assert results.empty?, "List can't be empty"
     return results
 
   end

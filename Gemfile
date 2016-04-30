@@ -56,5 +56,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'preconditions', '~> 0.3.0'
   gem 'factory_girl_rails'
+  gem "solid_assert"
+
 end
 
