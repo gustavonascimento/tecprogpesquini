@@ -14,9 +14,6 @@ class SessionsController < ApplicationController
   # creates a session.
   def create
 
-    Preconditions.check_not_nil(login)
-    Preconditions.check_not_nil(password)
-
     # receives the parameters necessary to login.
     login = params[:session][:login].downcase
 
