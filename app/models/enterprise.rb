@@ -19,9 +19,11 @@ class Enterprise < ActiveRecord::Base
   def last_sanction
     
     sanction = self.sanctions.last
+      
       unless sanction.nil?
 
         self.sanctions.each do |s|
+       
           if s.initial_date > sanction.initial_date
             sanction = s
           else
@@ -29,7 +31,9 @@ class Enterprise < ActiveRecord::Base
           end 
 
         end
+      
       end
+    
     return sanction
 
   end
@@ -38,15 +42,21 @@ class Enterprise < ActiveRecord::Base
   def last_payment
     
     payment = self.payments.last
+      
       unless payment.nil?
+     
         self.payments.each do |f|
+     
           if f.sign_date > payment.sign_date
             payment = f 
           else
             # nothing to do
           end
+     
         end
+     
       end
+    
     return payment
 
   end
@@ -105,7 +115,7 @@ class Enterprise < ActiveRecord::Base
     end
       @enterprise_group_array << enterprise_group
       @enterprise_group_array << enterprise_group_count
-      @enterprise_group_array
+      return @enterprise_group_array
   
   end
 
