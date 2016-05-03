@@ -40,9 +40,9 @@ class StatisticsController < ApplicationController
 
     if params[:sanjana]
       @all = true
-      @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
+      return @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
     else
-      @enterprises = Enterprise.featured_payments(10)
+      return @enterprises = Enterprise.featured_payments(10)
     end
 
   end
@@ -51,7 +51,7 @@ class StatisticsController < ApplicationController
   def enterprise_group_ranking
 
     @quantidade = params[:sanctions_count]
-    @enterprises = Enterprise.where(sanctions_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+    return @enterprises = Enterprise.where(sanctions_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
 
   end
 
@@ -59,7 +59,7 @@ class StatisticsController < ApplicationController
   def payment_group_ranking
 
     @quantidade = params[:payments_count]
-    @enterprises = Enterprise.where(payments_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+    return @enterprises = Enterprise.where(payments_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
   
   end
 

@@ -1,1 +1,1 @@
-SolidAssert.enable_assertions unless Rails.env.production?
+SolidAssert.disable_assertions unless Rails.env.production?

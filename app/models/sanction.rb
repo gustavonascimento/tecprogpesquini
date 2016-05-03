@@ -39,7 +39,7 @@ class Sanction < ActiveRecord::Base
       # it's the number of total of sanctions.
       total = Sanction.all.count
       # receives the percentage of the total.
-      value * 100.0 / total
+      return value * 100.0 / total
 
   end
 
