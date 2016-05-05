@@ -11,13 +11,13 @@ class EnterprisesController < ApplicationController
 
     if params[:q].nil?
       # used to keep the result of a search of a enterprise.
-      @search = Enterprise.search(params[:q].try(:merge, m: 'or'))
+      @result_of_search = Enterprise.search(params[:q].try(:merge, m: 'or'))
       # shows the result of the search.
       @enterprises = Enterprise.paginate(:page => params[:page], :per_page => 10)
     else
       params[:q][:cnpj_eq] = params[:q][:corporate_name_cont]
-      @search = Enterprise.search(params[:q].try(:merge, m: 'or'))
-      @enterprises = @search.result.paginate(:page => params[:page], :per_page => 10)
+      @result_of_search = Enterprise.search(params[:q].try(:merge, m: 'or'))
+      @enterprises = @result_of_search.result.paginate(:page => params[:page], :per_page => 10)
     end
 
   end
@@ -29,7 +29,7 @@ class EnterprisesController < ApplicationController
     @per_page = 10
 
     # calculates the page number.
-    @page_num = params[:page].to_i > 0 ? params[:page].to_i  - 1 : 0
+    @page_number = params[:page].to_i > 0 ? params[:page].to_i  - 1 : 0
 
     # shows the result of the search for enterprises.
     @enterprise = Enterprise.find(params[:id])
@@ -47,7 +47,7 @@ class EnterprisesController < ApplicationController
     @payment_position = enterprise_payment_position(@enterprise)
 
     # stores the position of the enterprise
-    @position = Enterprise.enterprise_position(@enterprise)
+    @position_of_enterprise = Enterprise.enterprise_position(@enterprise)
 
   end
 
