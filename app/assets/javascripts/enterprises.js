@@ -1,4 +1,12 @@
- $(document ).ready(function ( ) {
+/* 
+* File: enterprises.js
+* Purpouse: Provides the data of javascript needed for the parts related to enterprises.
+* License: GPL v3
+* Group 10 Tecprog
+* FGA - Universidade de Brasília - Campus Gama
+*/
+
+$(document ).ready(function ( ) {
 
   var sanctions = document.getElementsByClassName("sanction-info");
   var payments = document.getElementsByClassName("payment-info");
