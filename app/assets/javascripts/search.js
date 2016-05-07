@@ -1,3 +1,11 @@
+/* 
+* File: enterprises.js
+* Purpouse: Provides the data of javascript needed for the search function.
+* License: GPL v3
+* Group 10 Tecprog
+* FGA - Universidade de Brasília - Campus Gama
+*/
+
  $(document ).ready(function ( ) {
   
   var element = document.getElementById('enterprises_index');

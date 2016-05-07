@@ -1,3 +1,11 @@
+/* 
+* File: main.js
+* Purpouse: Provides the data of javascript needed for the parts related to the entire project.
+* License: GPL v3
+* Group 10 Tecprog
+* FGA - Universidade de Brasília - Campus Gama
+*/
+
 function main() {
 
   (function () {
