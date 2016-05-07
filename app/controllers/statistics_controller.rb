@@ -14,7 +14,7 @@ class StatisticsController < ApplicationController
   @@states_list = State.all_states
 
   # list that saves all the years.
-  @@sanjana = Sanction.all_years
+  @@all_years_list = Sanction.all_years
 
   # list that saves all the sanctions.
   @@sanction_type_list = SanctionType.all_sanction_types
@@ -38,7 +38,7 @@ class StatisticsController < ApplicationController
 
     @all = false
 
-    if params[:sanjana]
+    if params[:all_years_list]
       @all = true
       return @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
     else
@@ -133,7 +133,7 @@ class StatisticsController < ApplicationController
   def total_by_state()
 
     results = []
-    @years = @@sanjana
+    @years = @@all_years_list
 
     @@states_list.each do |state_item|
       state = State.find_by_abbreviation("#{state_item}")
