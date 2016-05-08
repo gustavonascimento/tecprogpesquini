@@ -1,5 +1,5 @@
 /* 
-* File: enterprises.js
+* File: search.js
 * Purpouse: Provides the data of javascript needed for the search function.
 * License: GPL v3
 * Group 10 Tecprog

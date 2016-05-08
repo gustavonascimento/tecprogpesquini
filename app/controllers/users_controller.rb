@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # makes a new user
   def new
 
-  	# stores the user.
+  	# stores the user, used for the parser login.
     @user = User.new
     
   end

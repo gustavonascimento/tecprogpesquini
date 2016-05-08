@@ -40,7 +40,8 @@ class Enterprise < ActiveRecord::Base
 
   # informs the last payment received by the enterprise.
   def last_payment
-    
+
+    # Stores the last payment of the enterprise    
     payment = self.payments.last
       
       unless payment.nil?
@@ -64,7 +65,9 @@ class Enterprise < ActiveRecord::Base
   #  tells if there were any payments after a sanction.
   def payment_after_sanction?
     
+    # Stores the last sanction of the enterprise  
     sanction = last_sanction
+    # Stores the last payment of the enterprise  
     payment = last_payment
       
       if sanction && payment
@@ -87,7 +90,10 @@ class Enterprise < ActiveRecord::Base
   # organizes the enterprises position accordingly to the amount of sanctions suffered.
   def self.enterprise_position(enterprise)
 
+      # Stores the sanctions of the enterprise, but its ordered.
       orderedSanc = self.featured_sanctions
+
+      # Stores the sanctions of the enterprise, but its groupes and its transformed in a array.
       groupedSanc = orderedSanc.uniq.group_by(&:sanctions_count).to_a
 
       groupedSanc.each_with_index do |k,index|
@@ -103,8 +109,13 @@ class Enterprise < ActiveRecord::Base
   # shows that the most sanctioned companies.
   def self.most_sanctioned_ranking
     
+    # Variable initialized to store the group of enterprises most sanctioned, to show in the ranking
     enterprise_group = []
+
+    # Stores the number of enterprise with the same number of sanctions
     enterprise_group_count = []
+
+    # Stores an array of enterprise, with the same count of sanctions
     @enterprise_group_array = []
     a = Enterprise.all.sort_by{|x| x.sanctions_count}
     b = a.uniq.group_by(&:sanctions_count).to_a.reverse

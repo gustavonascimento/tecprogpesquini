@@ -4,8 +4,6 @@
 # Group 10 Tecprog
 # FGA - Universidade de Brasília - Campus Gama
 
-
-
 class StatisticsController < ApplicationController
 
   # global variables
@@ -43,7 +41,7 @@ class StatisticsController < ApplicationController
   # manipulates the data of the most paid enterprises.
   def most_paymented_ranking
 
-    # GIves a false value to a variable to use it later, making the pagination.
+    # Gives a false value to a variable to use it later, making the pagination.
     @all = false
 
     if params[:all_years_list]
@@ -172,15 +170,24 @@ class StatisticsController < ApplicationController
   # shows the total of sanctions by state.
   def total_by_state()
 
+    # Initiates a variablçe that will later on store the resul of how much sanction there is by state.
     results = []
+
+    # Variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
     @years = @@all_years_list
 
     @@states_list.each do |state_item|
-      state = State.find_by_abbreviation("#{state_item}")
-      sanctions_by_state = Sanction.where(state_id: state[:id])
-      selected_year = []
-      if(params[:year_].to_i != 0)
 
+      # Stores the state searched by its abbreviation.
+      state = State.find_by_abbreviation("#{state_item}")
+
+      # Have relations to the precious state variable, storing the sanctions of the state.
+      sanctions_by_state = Sanction.where(state_id: state[:id])
+
+      # Variable initiated to store the year that it's selected by the user.
+      selected_year = []
+
+      if(params[:year_].to_i != 0)
         sanctions_by_state.each do |sanction|
           if(sanction.initial_date.year ==  params[:year_].to_i)
             selected_year << sanction
@@ -203,15 +210,24 @@ class StatisticsController < ApplicationController
   # shows the total of sanctions by it type.
   def total_by_type()
 
+    # Initiates a variablçe that will later on store the resul of how much sanction there is by type of sanction.
     results = []
+
+    # Initiates a variablçe that will later on store the resul of how much sanction there is by type of sanction.
     results2 = []
+
+    # Stores a integer that will be iterated.
     cont = 0
 
+     # Stores the state searched by its abbreviation.
     state = State.find_by_abbreviation(params[:state_])
 
     @@sanction_type_list.each do |sanction_type|
       
+      # Stores the sanction searched by its description.
       sanction = SanctionType.find_by_description(sanction_type[0])
+
+      # Stores the quantity os sanctions of the type stored before.
       sanctions_by_type = Sanction.where(sanction_type:  sanction)
       
       if (params[:state_] && params[:state_] != "Todos")

@@ -1,5 +1,5 @@
 /* 
-* File: enterprises.js
+* File: smooth_scrolling.js
 * Purpouse: Provides the data of javascript needed for the scrolling of the pages.
 * License: GPL v3
 * Group 10 Tecprog
