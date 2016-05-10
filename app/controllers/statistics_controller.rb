@@ -108,6 +108,8 @@ class StatisticsController < ApplicationController
         #nothing to do
       end
 
+      # The following lines will categorize the graph, 
+      # ... naming the ṕarts of it, and categorizing.
       plotted_graph.xAxis(:categories => @@states_list)
       plotted_graph.series(:name => "Número de Sanções", :yAxis => 0, :data => total_by_state)
       plotted_graph.yAxis [

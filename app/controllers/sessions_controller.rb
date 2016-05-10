@@ -36,6 +36,8 @@ class SessionsController < ApplicationController
   # destroys the session.
   def destroy
 
+    # This part of the code will destroy 
+    # ... the login of the user if it is logged in
     if signed_in?
       sign_out 
       redirect_to root_path

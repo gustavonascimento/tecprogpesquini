@@ -23,7 +23,10 @@ class Enterprise < ActiveRecord::Base
       unless sanction.nil?
 
         self.sanctions.each do |s|
-       
+          
+          # This following if will compare 
+          # ... the initial and last dates of the sanctions, 
+          # ... making the last date, a new variable.
           if s.initial_date > sanction.initial_date
             sanction = s
           else
@@ -70,6 +73,8 @@ class Enterprise < ActiveRecord::Base
     # Stores the last payment of the enterprise  
     payment = last_payment
       
+      # The following if will confirm if in fact there is a payment after the 
+      # ... sanction, comparing the payment sign date and the sanction initial date.
       if sanction && payment
         payment.sign_date < sanction.initial_date
       else
@@ -120,13 +125,16 @@ class Enterprise < ActiveRecord::Base
     a = Enterprise.all.sort_by{|x| x.sanctions_count}
     b = a.uniq.group_by(&:sanctions_count).to_a.reverse
 
+    # This block of code will do paginations
+    # ... and the order of the ranking of enterprises
     b.each do |k|
       enterprise_group << k[0]
       enterprise_group_count << k[1].count
     end
       @enterprise_group_array << enterprise_group
       @enterprise_group_array << enterprise_group_count
-      return @enterprise_group_array
+
+    return @enterprise_group_array
   
   end
 

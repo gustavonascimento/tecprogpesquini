@@ -9,6 +9,8 @@ class EnterprisesController < ApplicationController
   # controls the enterprises search.
   def index
 
+    # This part of the code controls the search, passing the params 
+    # ... through the view and getting int othe controller
     if params[:q].nil?
       # used to keep the result of a search of a enterprise.
       @result_of_search = Enterprise.search(params[:q].try(:merge, m: 'or'))
@@ -55,7 +57,10 @@ class EnterprisesController < ApplicationController
   def enterprise_payment_position(enterprise)
 
     # stores the featured paymensts of the enterprise.
-    payments = Enterprise.featured_payments  
+    payments = Enterprise.featured_payments
+
+      #This part of the code will compare two enterprises at a time to see if 
+      # ... they have the same pósition on the ranking.  
       payments.each_with_index do |a, index|
         if a.payments_sum == enterprise.payments_sum
           return index + 1 
