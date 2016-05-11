@@ -25,34 +25,36 @@ class StatisticsController < ApplicationController
   # manipulates the data of the enterprises with more sanctions.
   def most_sanctioned_ranking
     
-    # Stores the most sanctioned enterprises in a array
+    # stores the most sanctioned enterprises in a array
     enterprise_group_array = Enterprise.most_sanctioned_ranking
 
-    # Stores the first position of the previous array of enterprises.
+    # stores the first position of the previous array of enterprises.
     @enterprise_group = enterprise_group_array[0]
 
-    # Stores the second position of the previous array of enterprises.
+    # stores the second position of the previous array of enterprises.
     @enterprise_group_count = enterprise_group_array[1]
     
     return @enterprise_group_count
+
+    assert @enterprise_group_count.empty?, "Group of enterprises mus not be null"
 
   end
 
   # manipulates the data of the most paid enterprises.
   def most_paymented_ranking
 
-    # Gives a false value to a variable to use it later, making the pagination.
+    # gives a false value to a variable to use it later, making the pagination.
     @all = false
 
     if params[:all_years_list]
       @all = true
 
-      # Stores the enterprises by page, making it have only some enterprises in the page.
+      # stores the enterprises by page, making it have only some enterprises in the page.
       @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
     
     else
 
-      # Stores the enterprises by page, making it have only some enterprises in the page.
+      # stores the enterprises by page, making it have only some enterprises in the page.
       @enterprises = Enterprise.featured_payments(10)
 
     end
@@ -64,10 +66,10 @@ class StatisticsController < ApplicationController
   # aggregates the enterprises by the group it belongs
   def enterprise_group_ranking
 
-    #Stores the quantity of sanctions os the enterprise.
+    # stores the quantity of sanctions os the enterprise.
     @quantidade = params[:sanctions_count]
 
-    # Stores the enterprises by page, making it have only some enterprises in the page.
+    # stores the enterprises by page, making it have only some enterprises in the page.
     @enterprises = Enterprise.where(sanctions_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
 
     return @enterprises
@@ -77,38 +79,41 @@ class StatisticsController < ApplicationController
   # aggregates the payments by the group it belongs
   def payment_group_ranking
 
-    #Stores the quantity of payments os the enterprise.
-    @quantidade = params[:payments_count]
+    # stores the quantity of payments os the enterprise.
+    @payments_quantity = params[:payments_count]
 
-    # Stores the enterprises by page, making it have only some enterprises in the page.
-    @enterprises = Enterprise.where(payments_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+    # stores the enterprises by page, making it have only some enterprises in the page.
+    @enterprises = Enterprise.where(payments_count: @payments_quantity).paginate(:page => params[:page], :per_page => 10)
   
     return @enterprises
+
+    assert @payments_quantity.empty?, "Quantity must not be null"
+    assert @enterprises.empty?, "Enterprises groups must not be null"
 
   end
 
   # manipulate data to build the graphic of sanctions by state.
   def sanction_by_state_graph
 
-    # Stores the list of all states.
+    # stores the list of all states.
     gon.states = @@states_list
 
-    #Stores the data about the sanctions, by state.
+    # stores the data about the sanctions, by state.
     gon.dados = total_by_state
 
-    #Stores the title of the graph.
+    # stores the title of the graph.
     titulo = "Gráfico de Sanções por Estado"
 
-    #The variable that receives the graph, through the gem.
+    # the variable that receives the graph, through the gem.
     @chart = LazyHighCharts::HighChart.new('graph') do |plotted_graph|
       plotted_graph.title(:text => titulo)
       if(params[:year_].to_i != 0)
          plotted_graph.title(:text => params[:year_].to_i )
       else
-        #nothing to do
+        # nothing to do
       end
 
-      # The following lines will categorize the graph, 
+      # the following lines will categorize the graph, 
       # ... naming the ṕarts of it, and categorizing.
       plotted_graph.xAxis(:categories => @@states_list)
       plotted_graph.series(:name => "Número de Sanções", :yAxis => 0, :data => total_by_state)
@@ -125,10 +130,10 @@ class StatisticsController < ApplicationController
  # manipulate data to build the graphic of sanctions by type.
  def sanction_by_type_graph
 
-     #Stores the title of the graph of sanctions.
+    # stores the title of the graph of sanctions.
     titulo = "Gráfico Sanções por Tipo"
 
-    #The variable that receives the graph, through the gem.
+    # the variable that receives the graph, through the gem.
     @chart = LazyHighCharts::HighChart.new('pie') do |plotted_graph|
         plotted_graph.chart({:defaultSeriesType=>"pie" ,:margin=> [50, 10, 10, 10]} )
         plotted_graph.series({
@@ -153,9 +158,10 @@ class StatisticsController < ApplicationController
 
     if (!@states)
 
-      # Its a clone of the state varibale, wich stores all the states. 
+      # its a clone of the state varibale, wich stores all the states. 
       @states = @@states_list.clone
       @states.unshift("Todos")
+    
     else
       #nothing to do
     end
@@ -203,9 +209,9 @@ class StatisticsController < ApplicationController
       end
     end
 
-    assert results.empty?, "List can't be empty"
-
     return results
+
+    assert results.empty?, "List can't be empty"
 
   end
 
@@ -259,8 +265,9 @@ class StatisticsController < ApplicationController
     results << results2
     results = results.sort_by { |i| i[0] }
     
-    assert results.empty?, "List can't be empty"
     return results
+
+    assert results.empty?, "List can't be empty"
 
   end
 
