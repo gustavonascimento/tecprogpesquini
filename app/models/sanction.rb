@@ -29,7 +29,7 @@ class Sanction < ActiveRecord::Base
   def refresh!
 
     # stores the process number of the sanction.
-    s = Sanction.find_by_process_number(self.process_number)
+    sanctions_process_number = Sanction.find_by_process_number(self.process_number)
 
   end
 

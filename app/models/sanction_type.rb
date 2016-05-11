@@ -13,7 +13,7 @@ class SanctionType < ActiveRecord::Base
 	def refresh!
 
 		# stores the sanction found in the search.
-		s = SanctionType.find_by_description(self.description)
+		sanctions_description = SanctionType.find_by_description(self.description)
 
 	end
 

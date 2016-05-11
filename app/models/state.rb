@@ -13,7 +13,7 @@ class State < ActiveRecord::Base
   def refresh!
 
     # receives abbreviation.
-    s = State.find_by_abbreviation(self.abbreviation)
+    states_abbreviation = State.find_by_abbreviation(self.abbreviation)
 
   end
 
