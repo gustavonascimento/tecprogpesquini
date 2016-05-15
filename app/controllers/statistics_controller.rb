@@ -129,6 +129,8 @@ class StatisticsController < ApplicationController
 
     end
 
+    return @chart
+
   end
 
  # manipulate data to build the graphic of sanctions by type.
@@ -229,10 +231,10 @@ class StatisticsController < ApplicationController
     results_of_sanction_by_type = []
 
     # Initiates a variable that will later on store the resul of how much sanction there is by type of sanction.
-    results2 = []
+    results_of_second_search_of_sanctions = []
 
     # Stores a integer that will be iterated.
-    cont = 0
+    iterator = 0
 
      # Stores the state searched by its abbreviation.
     state = State.find_by_abbreviation(params[:state_])
@@ -240,10 +242,10 @@ class StatisticsController < ApplicationController
     @@sanction_type_list.each do |sanction_type|
       
       # Stores the sanction searched by its description.
-      sanction = SanctionType.find_by_description(sanction_type[0])
+      sanction_by_description = SanctionType.find_by_description(sanction_type[0])
 
       # Stores the quantity os sanctions of the type stored before.
-      sanctions_by_type = Sanction.where(sanction_type:  sanction)
+      sanctions_by_type = Sanction.where(sanction_type:  sanction_by_description)
       
       if (params[:state_] && params[:state_] != "Todos")
         sanctions_by_type = sanctions_by_type.where(state_id: state[:id])
@@ -251,26 +253,26 @@ class StatisticsController < ApplicationController
         #nothing to do
       end
       
-      cont = cont + (sanctions_by_type.count)
-      results2 << sanction_type[1]
-      results2 << (sanctions_by_type.count)
-      results_of_sanction_by_type << results2
-      results2 = []
+      iterator = iterator + (sanctions_by_type.count)
+      results_of_second_search_of_sanctions << sanction_type[1]
+      results_of_second_search_of_sanctions << (sanctions_by_type.count)
+      results_of_sanction_by_type << results_of_second_search_of_sanctions
+      results_of_second_search_of_sanctions = []
 
-      assert results2.empty?, "list2 can not be empty"
+      assert results_of_second_search_of_sanctions.empty?, "list2 can not be empty"
     
     end
     
-    results2 << "Não Informado"
-    
+    results_of_second_search_of_sanctions << "Não Informado"
+
       if (params[:state_] && params[:state_] != "Todos")
         total =Sanction.where(state_id: state[:id] ).count
       else
         total = Sanction.count
       end
     
-    results2 << (total - cont)
-    results_of_sanction_by_type << results2
+    results_of_second_search_of_sanctions << (total - iterator)
+    results_of_sanction_by_type << results_of_second_search_of_sanctions
     results_of_sanction_by_type = results_of_sanction_by_type.sort_by { |i| i[0] }
     
     return results_of_sanction_by_type
