@@ -8,13 +8,13 @@ class StatisticsController < ApplicationController
 
   # global variables
   
-  # list that saves all the states.
+  # list that saves all the states from brasil, including 'Distrito Federal'.
   @@states_list = State.all_states
 
-  # list that saves all the years.
+  # list that saves all the years in the program, since 1988.
   @@all_years_list = Sanction.all_years
 
-  # list that saves all the sanctions.
+  # list that saves all the type of sanctions regarding a enterprise.
   @@sanction_type_list = SanctionType.all_sanction_types
   
   # empty method.
@@ -22,7 +22,7 @@ class StatisticsController < ApplicationController
     
   end
 
-  # manipulates the data of the enterprises with more sanctions.
+  # manipulates the data of the enterprises with the most sanctions.
   def most_sanctioned_ranking
     
     # stores the most sanctioned enterprises in a array
@@ -44,22 +44,24 @@ class StatisticsController < ApplicationController
   def most_paymented_ranking
 
     # gives a false value to a variable to use it later, making the pagination.
-    @all = false
+    @list_of_years = false
 
     if params[:all_years_list]
-      @all = true
+      @list_of_years = true
 
-      # stores the enterprises by page, making it have only some enterprises in the page.
-      @enterprises = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
+      # stores the enterprises by page, making it have only some enterprises in the page, int this case , 20.
+      @enterprises_by_payments = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
     
     else
 
       # stores the enterprises by page, making it have only some enterprises in the page.
-      @enterprises = Enterprise.featured_payments(10)
+      @enterprises_by_payments = Enterprise.featured_payments(10)
 
     end
 
-    return @enterprises
+    return @enterprises_by_payments
+
+    assert @enterprises_by_payments.empty?, "Enterprises groups must not be null"
 
   end
 
@@ -67,12 +69,14 @@ class StatisticsController < ApplicationController
   def enterprise_group_ranking
 
     # stores the quantity of sanctions os the enterprise.
-    @quantidade = params[:sanctions_count]
+    @quantity_of_sanctions_in_enterprise = params[:sanctions_count]
 
     # stores the enterprises by page, making it have only some enterprises in the page.
-    @enterprises = Enterprise.where(sanctions_count: @quantidade).paginate(:page => params[:page], :per_page => 10)
+    @enterprises_by_sanctions = Enterprise.where(sanctions_count: @quantity_of_sanctions_in_enterprise).paginate(:page => params[:page], :per_page => 10)
 
-    return @enterprises
+    return @enterprises_by_sanctions
+
+    assert @enterprises_by_sanctions.empty?, "Enterprises groups must not be null"
 
   end
 
@@ -83,12 +87,12 @@ class StatisticsController < ApplicationController
     @payments_quantity = params[:payments_count]
 
     # stores the enterprises by page, making it have only some enterprises in the page.
-    @enterprises = Enterprise.where(payments_count: @payments_quantity).paginate(:page => params[:page], :per_page => 10)
+    @enterprises_by_payments_group = Enterprise.where(payments_count: @payments_quantity).paginate(:page => params[:page], :per_page => 10)
   
-    return @enterprises
+    return @enterprises_by_payments_group
 
-    assert @payments_quantity.empty?, "Quantity must not be null"
-    assert @enterprises.empty?, "Enterprises groups must not be null"
+    assert @payments_quantity.empty?, "Quantity of payments must not be null"
+    assert @enterprises_by_payments_group.empty?, "Enterprises groups must not be null"
 
   end
 
@@ -131,7 +135,7 @@ class StatisticsController < ApplicationController
  def sanction_by_type_graph
 
     # stores the title of the graph of sanctions.
-    titulo = "Gráfico Sanções por Tipo"
+    title_of_graph = "Gráfico Sanções por Tipo"
 
     # the variable that receives the graph, through the gem.
     @chart = LazyHighCharts::HighChart.new('pie') do |plotted_graph|
@@ -141,7 +145,7 @@ class StatisticsController < ApplicationController
                  :name=> 'Sanções Encontradas',
                  :data => total_by_type
         })
-        plotted_graph.options[:title][:text] = titulo
+        plotted_graph.options[:title][:text] = title_of_graph
         plotted_graph.legend(:layout=> 'vertical',:style=> {:left=> 'auto', :bottom=> 'auto', :right=> '50px', :top=> '100px'})
         plotted_graph.plot_options(:pie=>{
           :allowPointSelect=>true,
@@ -156,11 +160,11 @@ class StatisticsController < ApplicationController
         })
     end
 
-    if (!@states)
+    if (!@states_of_brazil)
 
-      # its a clone of the state varibale, wich stores all the states. 
-      @states = @@states_list.clone
-      @states.unshift("Todos")
+      # its a clone of the state variable, wich stores all the states. 
+      @states_of_brazil = @@states_list.clone
+      @states_of_brazil.unshift("Todos")
     
     else
       #nothing to do
@@ -173,13 +177,16 @@ class StatisticsController < ApplicationController
 
     return @chart
 
+    assert @chart.empty?, "List can't be empty"
+
+
   end
     
   # shows the total of sanctions by state.
   def total_by_state()
 
-    # Initiates a variablçe that will later on store the resul of how much sanction there is by state.
-    results = []
+    # Initiates a variable that will later on store the resul of how much sanction there is by state.
+    sanctions_in_state = []
 
     # Variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
     @years = @@all_years_list
@@ -203,25 +210,25 @@ class StatisticsController < ApplicationController
             #nothing to do
           end
         end
-        results << (selected_year.count)
+        sanctions_in_state << (selected_year.count)
       else
-        results << (sanctions_by_state.count)
+        sanctions_in_state << (sanctions_by_state.count)
       end
     end
 
-    return results
+    return sanctions_in_state
 
-    assert results.empty?, "List can't be empty"
+    assert sanctions_in_state.empty?, "List can't be empty"
 
   end
 
   # shows the total of sanctions by it type.
   def total_by_type()
 
-    # Initiates a variablçe that will later on store the resul of how much sanction there is by type of sanction.
-    results = []
+    # Initiates a variable that will later on store the resul of how much sanction there is by type of sanction.
+    results_of_sanction_by_type = []
 
-    # Initiates a variablçe that will later on store the resul of how much sanction there is by type of sanction.
+    # Initiates a variable that will later on store the resul of how much sanction there is by type of sanction.
     results2 = []
 
     # Stores a integer that will be iterated.
@@ -247,7 +254,7 @@ class StatisticsController < ApplicationController
       cont = cont + (sanctions_by_type.count)
       results2 << sanction_type[1]
       results2 << (sanctions_by_type.count)
-      results << results2
+      results_of_sanction_by_type << results2
       results2 = []
 
       assert results2.empty?, "list2 can not be empty"
@@ -255,6 +262,7 @@ class StatisticsController < ApplicationController
     end
     
     results2 << "Não Informado"
+    
       if (params[:state_] && params[:state_] != "Todos")
         total =Sanction.where(state_id: state[:id] ).count
       else
@@ -262,12 +270,12 @@ class StatisticsController < ApplicationController
       end
     
     results2 << (total - cont)
-    results << results2
-    results = results.sort_by { |i| i[0] }
+    results_of_sanction_by_type << results2
+    results_of_sanction_by_type = results_of_sanction_by_type.sort_by { |i| i[0] }
     
-    return results
+    return results_of_sanction_by_type
 
-    assert results.empty?, "List can't be empty"
+    assert results_of_sanction_by_type.empty?, "List can't be empty"
 
   end
 
