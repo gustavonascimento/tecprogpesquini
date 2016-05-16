@@ -18,13 +18,14 @@ class Enterprise < ActiveRecord::Base
   # informs the last sanctions suffered from the enterprise.
   def last_sanction
     
+    # Stores the sanction received last by the enterprise. 
     sanction = self.sanctions.last
       
       unless sanction.nil?
 
         self.sanctions.each do |s|
           
-          # This following if will compare 
+          # This following block of code if will compare 
           # ... the initial and last dates of the sanctions, 
           # ... making the last date, a new variable.
           if s.initial_date > sanction.initial_date
@@ -38,6 +39,9 @@ class Enterprise < ActiveRecord::Base
       end
     
     return sanction
+
+    assert @sanction.empty?, "Sanction object must not be null"
+
 
   end
 
@@ -62,6 +66,9 @@ class Enterprise < ActiveRecord::Base
       end
     
     return payment
+
+    assert @payment.empty?, "Payment object must not be null"
+
 
   end
 
@@ -135,6 +142,9 @@ class Enterprise < ActiveRecord::Base
       @enterprise_group_array << enterprise_group_count
 
     return @enterprise_group_array
+
+    assert @enterprise_group_array.empty?, "Enterprise array must not be null"
+
   
   end
 

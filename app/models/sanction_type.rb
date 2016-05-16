@@ -21,7 +21,7 @@ class SanctionType < ActiveRecord::Base
 	def self.all_sanction_types
 
 		# stores all the sanction types.
-		stantion_types = [
+		sanction_types = [
 		[ "INIDONEIDADE - LEGISLAçãO ESTADUAL", "Inidoneidade - Legislação Estadual"],
 		[ "IMPEDIMENTO - LEI DO PREGãO", "Impedimento - Lei do Pregão"],
 		[ "PROIBIçãO - LEI ELEITORAL", "Proibição - Lei Eleitoral"],
@@ -39,7 +39,9 @@ class SanctionType < ActiveRecord::Base
 		[ "PROIBIçãO - LEI AMBIENTAL", "Proibição - Lei Ambiental" ],
 		]
 
-		return stantion_types
+		return sanction_types
+
+		assert @sanction_types.empty?, "Sanction Type array must not be null"
 		
 	end
 	
