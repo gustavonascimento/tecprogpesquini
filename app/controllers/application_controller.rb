@@ -26,8 +26,8 @@ class ApplicationController < ActionController::Base
   # displays an error if the render isn't found.
   def render_not_found
 
-    respond_to do |f|
-      f.html{ render :template => "errors/404", :status => 404 }
+    respond_to do |message|
+      message.html{ render :template => "errors/404", :status => 404 }
     end
 
   end

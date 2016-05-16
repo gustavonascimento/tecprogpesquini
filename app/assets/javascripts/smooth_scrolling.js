@@ -29,6 +29,9 @@ $(function() {
       }
     
     }
+    else {
+      //nothing to do
+    }
   
   });
 

@@ -23,13 +23,13 @@ class Enterprise < ActiveRecord::Base
       
       unless sanction.nil?
 
-        self.sanctions.each do |s|
+        self.sanctions.each do |sanctions|
           
           # This following block of code if will compare 
           # ... the initial and last dates of the sanctions, 
           # ... making the last date, a new variable.
-          if s.initial_date > sanction.initial_date
-            sanction = s
+          if sanctions.initial_date > sanction.initial_date
+            sanction = sanctions
           else
           # nothing to do
           end 
@@ -85,7 +85,7 @@ class Enterprise < ActiveRecord::Base
       if sanction && payment
         payment.sign_date < sanction.initial_date
       else
-        false
+         return false
       end
 
   end
