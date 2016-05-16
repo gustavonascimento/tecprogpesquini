@@ -1,3 +1,9 @@
+# File: routes.rb
+# Purpouse: Have all the routes that exist in the software, denoting all the ways in what the software works.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 Rails.application.routes.draw do
   root 'welcome#index'
   get '/parser/cei' => 'parser/parser_cei#import'
