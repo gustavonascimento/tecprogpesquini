@@ -21,7 +21,7 @@ class Enterprise < ActiveRecord::Base
     # Stores the sanction received last by the enterprise. 
     sanction = self.sanctions.last
       
-      unless sanction.nil?
+      if not sanction.nil?
 
         self.sanctions.each do |sanctions|
           
@@ -35,7 +35,8 @@ class Enterprise < ActiveRecord::Base
           end 
 
         end
-      
+      else
+        # nothing to do
       end
     
     return sanction
