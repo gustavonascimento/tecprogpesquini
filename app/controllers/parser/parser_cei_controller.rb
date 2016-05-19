@@ -49,13 +49,14 @@ class Parser::ParserCeiController < Parser::ParserController
                 :encoding => 'ISO-8859-1') do |row|
       data = row.to_hash
 
-      unless data["Tipo de Pessoa"].match("J|j").nil?
+      if not data["Tipo de Pessoa"].match("J|j").nil?
 
         sanction_type = build_sanction_type(data)
         state = build_state(data)
         enterprise = build_enterprise(data)
         build_sanction(data, sanction_type, state, enterprise)
-
+      else
+        # nothing to do
       end
 
     end
