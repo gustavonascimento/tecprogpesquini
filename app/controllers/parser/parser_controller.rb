@@ -43,15 +43,15 @@ class Parser::ParserController < ApplicationController
   end
 
   # checks and save the data from the file.
-  def check_and_save(c)
+  def check_and_save(data)
 
     # stores all the data from the parser.
     begin
-      c.save!
-      c
+      data.save!
+      data
     rescue ActiveRecord::RecordInvalid
-      c = c.refresh!
-      c
+      data = data.refresh!
+      data
     end
 
   end

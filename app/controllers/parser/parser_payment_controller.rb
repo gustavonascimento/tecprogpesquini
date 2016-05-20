@@ -36,25 +36,25 @@ class Parser::ParserPaymentController < Parser::ParserController
   def import()
 
     constante = 0
-    Enterprise.find_each do |e|
+    Enterprise.find_each do |enterprises|
 
       url = 'http://compras.dados.gov.br/contratos/v1/contratos.csv?cnpj_contratada='
       begin
-        data =  open(url+e.cnpj).read
+        data =  open(url+enterprises.cnpj).read
         csv = CSV.parse(data, :headers => true, :encoding => 'ISO-8859-1')
 
         csv.each_with_index do |row, i|
-          p = Payment.new
-          p.identifier = check_nil_ascii(row[0])
-          p.process_number = check_nil_ascii(row[10])
-          p.initial_value = check_value(row[16])
-          p.sign_date = check_date(row[12])
-          p.start_date = check_date(row[14])
-          p.end_date = check_date(row[15])
-          p.enterprise = e
-          e.payments_sum = e.payments_sum + p.initial_value
-          check_and_save(e)
-          check_and_save(p)
+          payment = Payment.new
+          payment.identifier = check_nil_ascii(row[0])
+          payment.process_number = check_nil_ascii(row[10])
+          payment.initial_value = check_value(row[16])
+          payment.sign_date = check_date(row[12])
+          payment.start_date = check_date(row[14])
+          payment.end_date = check_date(row[15])
+          payment.enterprise = enterprises
+          enterprises.payments_sum = enterprises.payments_sum + payment.initial_value
+          check_and_save(enterprises)
+          check_and_save(payment)
         end
       rescue
         constante = constante +   1
@@ -66,14 +66,14 @@ class Parser::ParserPaymentController < Parser::ParserController
   end
 
   # checks and save the data from the file.
-  def check_and_save(c)
+  def check_and_save(data)
 
     begin
-      c.save!
-      c
+      data.save!
+      data
     rescue ActiveRecord::RecordInvalid
-      c = c.refresh!
-      c
+      data = data.refresh!
+      data
     end
     
   end
