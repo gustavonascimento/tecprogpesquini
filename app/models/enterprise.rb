@@ -106,7 +106,8 @@ class Enterprise < ActiveRecord::Base
       # Stores the sanctions of the enterprise, but its ordered.
       orderedSanc = self.featured_sanctions
 
-      # Stores the sanctions of the enterprise, but its groupes and its transformed in a array.
+      # Stores the sanctions of the enterprise, but its groupes and its transformed
+      # in a array.
       groupedSanc = orderedSanc.uniq.group_by(&:sanctions_count).to_a
 
       groupedSanc.each_with_index do |k,index|
@@ -122,7 +123,8 @@ class Enterprise < ActiveRecord::Base
   # shows that the most sanctioned companies.
   def self.most_sanctioned_ranking
     
-    # Variable initialized to store the group of enterprises most sanctioned, to show in the ranking
+    # Variable initialized to store the group of enterprises most sanctioned,
+    # to show in the ranking
     enterprise_group = []
 
     # Stores the number of enterprise with the same number of sanctions
