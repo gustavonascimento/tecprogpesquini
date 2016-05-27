@@ -16,6 +16,7 @@ class Enterprise < ActiveRecord::Base
   scope :featured_payments, -> (number=nil){number ? order('payments_sum DESC').limit(number) :order('payments_sum DESC')}
 
   # informs the last sanctions suffered from the enterprise.
+  # @param sanction.
   def last_sanction
     
     # Stores the sanction received last by the enterprise. 
@@ -23,30 +24,31 @@ class Enterprise < ActiveRecord::Base
       
       if not sanction.nil?
 
-        self.sanctions.each do |sanctions|
+        self.sanctions.each do |sanction_found|
           
           # This following block of code if will compare 
           # ... the initial and last dates of the sanctions, 
           # ... making the last date, a new variable.
-          if sanctions.initial_date > sanction.initial_date
-            sanction = sanctions
+          if sanction_found.initial_date > sanction.initial_date
+            sanction = sanction_found
           else
           # nothing to do
-          end 
+          end
 
         end
-      else
-        # nothing to do
-      end
     
+    end
+
     return sanction
 
-    assert @sanction.empty?, "Sanction object must not be null"
+    Preconditions.check_not_nil(sanction_found)
 
+    assert @sanction.empty?, "Sanction object must not be null"
 
   end
 
   # informs the last payment received by the enterprise.
+  # @param payment.
   def last_payment
 
     # Stores the last payment of the enterprise    
@@ -54,10 +56,10 @@ class Enterprise < ActiveRecord::Base
       
       unless payment.nil?
      
-        self.payments.each do |f|
+        self.payments.each do |founded_payment|
      
-          if f.sign_date > payment.sign_date
-            payment = f 
+          if founded_payment.sign_date > payment.sign_date
+            payment = founded_payment
           else
             # nothing to do
           end
@@ -68,12 +70,15 @@ class Enterprise < ActiveRecord::Base
     
     return payment
 
+    Preconditions.check_not_nil(founded_payment)
+
     assert @payment.empty?, "Payment object must not be null"
 
 
   end
 
-  #  tells if there were any payments after a sanction.
+  # tells if there were any payments after a sanction.
+  # @param payment.
   def payment_after_sanction?
     
     # Stores the last sanction of the enterprise  
@@ -89,13 +94,20 @@ class Enterprise < ActiveRecord::Base
          return false
       end
 
+      return payment
+
   end
 
   # refresh the enterprises searched by CNPJ.
+  # @param enterprises_return_search
   def refresh!
+
+    Preconditions.check_not_nil(cnpj)
 
     # stores all the enterprises that have been searched in this method .
     enterprises_return_search = Enterprise.find_by_cnpj(self.cnpj)
+
+    return enterprises_return_search
   
   end
 
@@ -103,10 +115,10 @@ class Enterprise < ActiveRecord::Base
   # organizes the enterprises position accordingly to the amount of sanctions suffered.
   def self.enterprise_position(enterprise)
 
-      # Stores the sanctions of the enterprise, but its ordered.
+      # stores the sanctions of the enterprise, but its ordered.
       orderedSanc = self.featured_sanctions
 
-      # Stores the sanctions of the enterprise, but its groupes and its transformed
+      # stores the sanctions of the enterprise, but its groupes and its transformed
       # in a array.
       groupedSanc = orderedSanc.uniq.group_by(&:sanctions_count).to_a
 

@@ -22,6 +22,8 @@ class Sanction < ActiveRecord::Base
              2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
              2014, 2015]
     return years 
+    
+    Preconditions.check_not_nil(years)
     assert years.empty?, "Array years should contain the years in analysis in the system."
 
   end
@@ -31,6 +33,9 @@ class Sanction < ActiveRecord::Base
 
     # stores the process number of the sanction.
     sanctions_process_number = Sanction.find_by_process_number(self.process_number)
+    return sanctions_process_number
+
+    Preconditions.check_not_nil(sanctions_process_number)
 
   end
 
@@ -42,6 +47,9 @@ class Sanction < ActiveRecord::Base
       # receives the percentage of the total.
       percent_total = value * 100.0 / total
       return percent_total
+
+      Preconditions.check(total) {is_not_nil and has_type(Interger) and satisfies("> 0") {total > 0}}
+      Preconditions.check(value) {is_not_nil and has_type(Double)}
 
   end
 
