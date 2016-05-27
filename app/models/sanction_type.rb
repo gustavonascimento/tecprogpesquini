@@ -10,14 +10,20 @@ class SanctionType < ActiveRecord::Base
 	validates_uniqueness_of :description
 
 	# refresh the enterprises by sanction type.
+	# @param sanction_description
 	def refresh!
 
 		# stores the sanction found in the search.
 		sanctions_description = SanctionType.find_by_description(self.description)
 
+		return sanctions_description
+
+		Preconditions.check_not_nil(sanctions_description)
+
 	end
 
 	# informs all the types of sanctions.
+	# @param sanction_types
 	def self.all_sanction_types
 
 		# stores all the sanction types.
@@ -41,6 +47,7 @@ class SanctionType < ActiveRecord::Base
 
 		return sanction_types
 
+		Preconditions.check_not_nil(sanction_types)
 		assert @sanction_types.empty?, "Sanction Type array must not be null"
 		
 	end

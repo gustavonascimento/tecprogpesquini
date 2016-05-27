@@ -12,10 +12,15 @@ class Payment < ActiveRecord::Base
   validates_uniqueness_of :process_number
 
   # finds the payment related with its process, which is the CNPJ of the enterprise.
+  # @param payments_process_number
   def refresh!
   	
   	# stores the payments found.
     payments_process_number = Payment.find_by_process_number(self.process_number)
+
+    return payments_process_number
+
+    Preconditions.check_not_nil(payments_process_number)
     
   end
 

@@ -147,6 +147,9 @@ class Enterprise < ActiveRecord::Base
     a = Enterprise.all.sort_by{|x| x.sanctions_count}
     b = a.uniq.group_by(&:sanctions_count).to_a.reverse
 
+    Preconditions.check_not_nil(a)
+    Preconditions.check_not_nil(b)
+
     # This block of code will do paginations
     # ... and the order of the ranking of enterprises
     b.each do |k|
@@ -158,8 +161,8 @@ class Enterprise < ActiveRecord::Base
 
     return @enterprise_group_array
 
+    Preconditions.check_not_nil(@enterprise_group_array)
     assert @enterprise_group_array.empty?, "Enterprise array must not be null"
-
   
   end
 
