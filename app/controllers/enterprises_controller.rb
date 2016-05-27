@@ -7,6 +7,7 @@
 class EnterprisesController < ApplicationController
 
   # controls the enterprises search.
+  # @param @enterprises
   def index
 
     # This part of the code controls the search, passing the params 
@@ -19,6 +20,9 @@ class EnterprisesController < ApplicationController
       # shows the result of the search.
       @enterprises = Enterprise.paginate(:page => params[:page], :per_page => 10)
 
+      Preconditions.check_not_nil(@result_of_search)
+      Preconditions.check_not_nil(@enterprises)
+
     else
 
       params[:q][:cnpj_eq] = params[:q][:corporate_name_cont]
@@ -27,9 +31,12 @@ class EnterprisesController < ApplicationController
 
     end
 
+    return @enterprises
+
   end
 
   # communicates with the view to show enterprises attributes.
+  # @param @position_pf_enterprise
   def show
 
     # keeps how many results of the enterprise search can be show in one page.
@@ -55,6 +62,8 @@ class EnterprisesController < ApplicationController
 
     # stores the position of the enterprise
     @position_of_enterprise = Enterprise.enterprise_position(@enterprise)
+
+    return @position_of_enterprise
 
   end
 

@@ -7,11 +7,16 @@
 class UsersController < ApplicationController
 
   # makes a new user
+  # @param @user
   def new
 
   	# stores the user, used for the parser login.
     @user = User.new
+
+    return @user
+
+    Preconditions.check_not_nil(@user)
     
   end
   
- end
+end
