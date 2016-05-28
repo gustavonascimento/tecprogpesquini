@@ -259,7 +259,7 @@ class StatisticsController < ApplicationController
       results_of_sanction_by_type << results_of_second_search_of_sanctions
       results_of_second_search_of_sanctions = []
 
-      assert results_of_second_search_of_sanctions.empty?, "list2 can not be empty"
+      assert results_of_second_search_of_sanctions.empty?, "Result of second search can not be empty"
     
     end
     
@@ -277,7 +277,7 @@ class StatisticsController < ApplicationController
     
     return results_of_sanction_by_type
 
-    assert results_of_sanction_by_type.empty?, "List can't be empty"
+    assert results_of_sanction_by_type.empty?, "Results of sanction can't be empty"
 
   end
 

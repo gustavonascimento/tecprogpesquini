@@ -26,7 +26,7 @@ class State < ActiveRecord::Base
   # @param states.
   def self.all_states
 
-    # array cointaing all the abbreviations of states.
+    # array containing all the abbreviations of states.
     states = ["BA", "DF", "RJ", "PA", "MG", "SP", "AM", "RS", "SC", "ES", "PR",
      "PB", "RN", "CE", "AL", "RR", "SE", "RO","PI" , "AC",
     "TO", "GO", "PE", "AP", "MS", "MT", "MA","Não Informado"]
