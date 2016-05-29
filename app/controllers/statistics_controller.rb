@@ -23,6 +23,7 @@ class StatisticsController < ApplicationController
   end
 
   # manipulates the data of the enterprises with the most sanctions.
+  # @param @enterprise_group_count
   def most_sanctioned_ranking
     
     # stores the most sanctioned enterprises in a array
@@ -41,21 +42,26 @@ class StatisticsController < ApplicationController
   end
 
   # manipulates the data of the most paid enterprises.
+  # @param @enterprises_by_payments
   def most_paymented_ranking
 
     # gives a false value to a variable to use it later, making the pagination.
     @list_of_years = false
 
+    Preconditions.check_not_nil(:all_years_list)
+
     if params[:all_years_list]
       @list_of_years = true
 
-      # stores the enterprises by page, making it have only some enterprises in the page, int this case , 20.
-      @enterprises_by_payments = Enterprise.featured_payments.paginate(:page => params[:page], :per_page => 20)
+      # stores the enterprises by page, making it have only some enterprises in the page, 
+      # ...int this case , 20.
+      @enterprises_by_payments = Enterprise.featured_payments.paginate(:page => params[:page], 
+                                                                       :per_page => 20)
     
     else
 
       # stores the enterprises by page, making it have only some enterprises in the page.
-      @enterprises_by_payments = Enterprise.featured_payments(10)
+      @enterprises_by_payments = Enterprise.featured_payments(20)
 
     end
 
@@ -66,13 +72,15 @@ class StatisticsController < ApplicationController
   end
 
   # aggregates the enterprises by the group it belongs
+  # @param @enterprises_by_sanctions
   def enterprise_group_ranking
 
     # stores the quantity of sanctions os the enterprise.
     @quantity_of_sanctions_in_enterprise = params[:sanctions_count]
 
     # stores the enterprises by page, making it have only some enterprises in the page.
-    @enterprises_by_sanctions = Enterprise.where(sanctions_count: @quantity_of_sanctions_in_enterprise).paginate(:page => params[:page], :per_page => 10)
+    @enterprises_by_sanctions = Enterprise.where(sanctions_count: @quantity_of_sanctions_in_enterprise)
+                                .paginate(:page => params[:page], :per_page => 10)
 
     return @enterprises_by_sanctions
 
@@ -81,13 +89,17 @@ class StatisticsController < ApplicationController
   end
 
   # aggregates the payments by the group it belongs
+  # @param @enterprises_by_payments_group
   def payment_group_ranking
 
-    # stores the quantity of payments os the enterprise.
+    # stores the quantity of payments of the enterprise.
     @payments_quantity = params[:payments_count]
 
+    assert @payments_quantity < 0, "Number of payments less than 0"
+
     # stores the enterprises by page, making it have only some enterprises in the page.
-    @enterprises_by_payments_group = Enterprise.where(payments_count: @payments_quantity).paginate(:page => params[:page], :per_page => 10)
+    @enterprises_by_payments_group = Enterprise.where(payments_count: @payments_quantity)
+                                    .paginate(:page => params[:page], :per_page => 10)
   
     return @enterprises_by_payments_group
 
@@ -97,6 +109,7 @@ class StatisticsController < ApplicationController
   end
 
   # manipulate data to build the graphic of sanctions by state.
+  # @param @chart
   def sanction_by_state_graph
 
     # stores the list of all states.
@@ -134,6 +147,7 @@ class StatisticsController < ApplicationController
   end
 
  # manipulate data to build the graphic of sanctions by type.
+ # @param @chart
  def sanction_by_type_graph
 
     # stores the title of the graph of sanctions.
@@ -185,23 +199,24 @@ class StatisticsController < ApplicationController
   end
     
   # shows the total of sanctions by state.
+  # @param sanctions_in_state
   def total_by_state()
 
-    # Initiates a variable that will later on store the resul of how much sanction there is by state.
+    # initiates a variable that will later on store the resul of how much sanction there is by state.
     sanctions_in_state = []
 
-    # Variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
+    # variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
     @years = @@all_years_list
 
     @@states_list.each do |state_item|
 
-      # Stores the state searched by its abbreviation.
+      # stores the state searched by its abbreviation.
       state = State.find_by_abbreviation("#{state_item}")
 
-      # Have relations to the precious state variable, storing the sanctions of the state.
+      # have relations to the precious state variable, storing the sanctions of the state.
       sanctions_by_state = Sanction.where(state_id: state[:id])
 
-      # Variable initiated to store the year that it's selected by the user.
+      # variable initiated to store the year that it's selected by the user.
       selected_year = []
 
       if(params[:year_].to_i != 0)
@@ -225,26 +240,29 @@ class StatisticsController < ApplicationController
   end
 
   # shows the total of sanctions by it type.
+  # @param results_of_sanction_by_type
   def total_by_type()
 
-    # Initiates a variable that will later on store the resul of how much sanction there is by type of sanction.
+    # initiates a variable that will later on store the resul of 
+    # ...how much sanction there is by type of sanction.
     results_of_sanction_by_type = []
 
-    # Initiates a variable that will later on store the resul of how much sanction there is by type of sanction.
+    # initiates a variable that will later on store the resul of 
+    # ...how much sanction there is by type of sanction.
     results_of_second_search_of_sanctions = []
 
-    # Stores a integer that will be iterated.
+    # stores a integer that will be iterated.
     iterator = 0
 
-     # Stores the state searched by its abbreviation.
+     # stores the state searched by its abbreviation.
     state = State.find_by_abbreviation(params[:state_])
 
     @@sanction_type_list.each do |sanction_type|
       
-      # Stores the sanction searched by its description.
+      # stores the sanction searched by its description.
       sanction_by_description = SanctionType.find_by_description(sanction_type[0])
 
-      # Stores the quantity os sanctions of the type stored before.
+      # stores the quantity os sanctions of the type stored before.
       sanctions_by_type = Sanction.where(sanction_type:  sanction_by_description)
       
       if (params[:state_] && params[:state_] != "Todos")
