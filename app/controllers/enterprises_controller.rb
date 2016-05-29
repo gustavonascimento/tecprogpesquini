@@ -35,6 +35,20 @@ class EnterprisesController < ApplicationController
 
   end
 
+  # calculates the page number
+  # @param @page_number
+  def show_page_number()
+
+    if params[:page].to_i > 0
+      @page_number = params[:page].to_i  - 1
+    else
+      @page_number = 0
+    end
+
+    return @page_number
+
+  end
+
   # communicates with the view to show enterprises attributes.
   # @param @position_pf_enterprise
   def show
@@ -43,7 +57,7 @@ class EnterprisesController < ApplicationController
     @per_page = 10
 
     # calculates the page number.
-    @page_number = params[:page].to_i > 0 ? params[:page].to_i  - 1 : 0
+    @page_number = show_page_number()
 
     # shows the result of the search for enterprises.
     @enterprise = Enterprise.find(params[:id])
