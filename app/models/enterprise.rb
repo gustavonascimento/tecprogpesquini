@@ -81,20 +81,18 @@ class Enterprise < ActiveRecord::Base
   # @param payment.
   def payment_after_sanction?
     
-    # Stores the last sanction of the enterprise  
+    # stores the last sanction of the enterprise  
     sanction = last_sanction
-    # Stores the last payment of the enterprise  
+    # stores the last payment of the enterprise  
     payment = last_payment
       
-      # The following if will confirm if in fact there is a payment after the 
+      # the following if will confirm if in fact there is a payment after the 
       # ... sanction, comparing the payment sign date and the sanction initial date.
       if sanction && payment
         payment.sign_date < sanction.initial_date
       else
          return false
       end
-
-      return payment
 
   end
 
