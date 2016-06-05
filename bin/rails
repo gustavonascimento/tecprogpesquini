@@ -1,3 +1,9 @@
+# File: rails
+# Purpouse: Itś the rails config page, managing the files and its paths
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 #!/usr/bin/env ruby
 begin
   load File.expand_path("../spring", __FILE__)

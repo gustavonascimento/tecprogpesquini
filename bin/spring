@@ -1,3 +1,9 @@
+# File: spring
+# Purpouse: This file loads spring without using Bundler, in order to be fast.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 #!/usr/bin/env ruby
 
 # This file loads spring without using Bundler, in order to be fast.

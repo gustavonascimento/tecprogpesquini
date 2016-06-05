@@ -1,3 +1,10 @@
+# File: setup
+# Purpouse: Manages the ssetup of the application, showing the necessary directories
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
+
 #!/usr/bin/env ruby
 require 'pathname'
 
