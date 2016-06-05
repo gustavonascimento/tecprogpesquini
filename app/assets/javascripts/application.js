@@ -1,3 +1,11 @@
+/* 
+* File: applicaion.js
+* Purpouse: Have all the requires necessaries to load the application
+* License: GPL v3
+* Group 10 Tecprog
+* FGA - Universidade de Brasília - Campus Gama
+*/
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
