@@ -1,3 +1,9 @@
+# File: wrap_parameters.rb
+# Purpouse: Enable parameter wrapping for JSON
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # Be sure to restart your server when you modify this file.
 
 # This file contains settings for ActionController::ParamsWrapper which

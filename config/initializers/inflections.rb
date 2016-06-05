@@ -1,3 +1,9 @@
+# File: inflections.rb
+# Purpouse: Add new inflection rules using the following format.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections
