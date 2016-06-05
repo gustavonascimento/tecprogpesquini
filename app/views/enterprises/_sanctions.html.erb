@@ -12,31 +12,31 @@
   <% @sanctions.each_with_index do |p, index| %>
 
     <h4>
-    <b>
-    <div class= "index_number"><%= @page_number*@per_page + index +1 %></div>
-    </b>
+      <b>
+        <div class= "index_number"><%= @page_number*@per_page + index +1 %></div>
+      </b>
     </h4>
 
     <h4>
-    <b>Órgao Sancionador: </b><%= p.sanction_organ.downcase! %>
+      <b>Órgao Sancionador: </b><%= p.sanction_organ.downcase! %>
     </h4>
 
     <h4><b>Número do processo: </b><%= p.process_number %></h4>
     <h4><b>Data de Inicio da Sanção: </b>
-    <%= p.initial_date.nil? ? "Dado nao informado" :p.initial_date.strftime("%d/%m/%Y") %>
+      <%= p.initial_date.nil? ? "Dado nao informado" :p.initial_date.strftime("%d/%m/%Y") %>
     </h4>
 
     <h4><b>Data Final da Sanção: </b>
-    <%= p.final_date.nil? ? "Dado nao informado"  :p.final_date.strftime("%d/%m/%Y") %>
+      <%= p.final_date.nil? ? "Dado nao informado"  :p.final_date.strftime("%d/%m/%Y") %>
     </h4>
 
     <h4><b> UF: </b>
-    <%= p.state.nil? ? "Dado nao informado" : p.state.abbreviation %>
+      <%= p.state.nil? ? "Dado nao informado" : p.state.abbreviation %>
     </h4>
 
     <h4>
-    <b> Tipo Sanção: </b> 
-    <%= p.sanction_type.nil? ? "Dado não informado" : p.sanction_type.description.downcase! %>
+      <b> Tipo Sanção: </b> 
+      <%= p.sanction_type.nil? ? "Dado não informado" : p.sanction_type.description.downcase! %>
     </h4>
 
     <% if @enterprise.payment_after_sanction? %>

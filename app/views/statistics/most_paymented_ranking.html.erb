@@ -1,24 +1,21 @@
 <div class="container">
 	<%= render 'back_button' %>
-
 	<h2 align="center">Ranking das empresas que mais receberam verba em pagamentos</h2>
-
 	<br><br>
 	<%@enterprises_by_payments.each_with_index do |e, index| %>
-
-	<h3><%= index + 1 %> )  <%= link_to e.corporate_name, e %><br></h3>
-	<b>Total de pagamentos feitos a empresa:</b>
-	<%=  number_to_currency(e.payments_sum, unit: "R$ ", separator: ",", delimiter: ".") %>
+		<h3><%= index + 1 %> )  <%= link_to e.corporate_name, e %><br></h3>
+		<b>Total de pagamentos feitos a empresa:</b>
+		<%=  number_to_currency(e.payments_sum, unit: "R$ ", separator: ",", delimiter: ".") %>
 	<% end %>
 </div>
 
-<div = class="container">
+<div class="container">
 	<span class="division"> <hr> </span>
-	<% if !@all %>
-	<%= link_to "Todas", controller: 'statistics', action: 'most_paymented_ranking', sanjana: ""%>
-	<% end %>
-	<% if @all %>
-	<%= will_paginate @enterprises_by_payments,  renderer: BootstrapPagination::Rails %>
-	<% end %>
+		<% if !@all %>
+			<%= link_to "Todas", controller: 'statistics', action: 'most_paymented_ranking', sanjana: ""%>
+		<% end %>
+		<% if @all %>
+			<%= will_paginate @enterprises_by_payments,  renderer: BootstrapPagination::Rails %>
+		<% end %>
 	<span class="division"> <hr> </span>
 </div>
