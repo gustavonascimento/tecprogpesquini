@@ -1,3 +1,9 @@
+# File: application.rb
+# Purpouse: Settings in config/environments/* take precedence over those specified here.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
