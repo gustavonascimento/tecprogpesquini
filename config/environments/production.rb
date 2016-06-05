@@ -1,3 +1,9 @@
+# File: production.erb
+# Purpouse: Stores all the configs regarding the production.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

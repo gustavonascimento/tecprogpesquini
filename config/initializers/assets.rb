@@ -1,3 +1,9 @@
+# File: assets.rb
+# Purpouse: Stores all the configs regarding the assets.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # Be sure to restart your server when you modify this file.
 
 # Version of your assets, change this if you want to expire all your assets.

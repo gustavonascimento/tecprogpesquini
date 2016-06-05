@@ -1,3 +1,9 @@
+# File: backtrace_silencers.rb
+# Purpouse: Stores all the configs regarding the serializing the cookies.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # Be sure to restart your server when you modify this file.
 
 # You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
