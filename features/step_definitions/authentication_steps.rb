@@ -1,3 +1,9 @@
+# File: athentication_steps.rb
+# Purpouse: Have the steps regarding the cucumber/selenium tests
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # encoding: utf-8
 
 Dado(/^que insiro uma empresa existente$/) do
