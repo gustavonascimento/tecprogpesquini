@@ -1,3 +1,11 @@
+<% 
+# File: _messages.html.erb
+# Purpouse: Provides the standart message alert for the application, being used when necessary.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+%>
+
 <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>">
     <a href="#" data-dismiss="alert" class="close">×</a>
