@@ -1,3 +1,9 @@
+# File: pesquini_development.sql
+# Purpouse: It's a script for loading the parser of payments.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 --
 -- PostgreSQL database dump
 --

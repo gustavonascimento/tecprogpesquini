@@ -1,3 +1,9 @@
+# File: cucumber
+# Purpouse: Script taht runs  the cucumber tests
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 #!/usr/bin/env ruby
 
 vendored_cucumber_bin = Dir["#{File.dirname(__FILE__)}/../vendor/{gems,plugins}/cucumber*/bin/cucumber"].first

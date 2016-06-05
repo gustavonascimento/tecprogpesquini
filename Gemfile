@@ -1,3 +1,9 @@
+# File: Gemfile
+# Purpouse: Stores all the gems used in the system
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 source 'https://rubygems.org'
 
 

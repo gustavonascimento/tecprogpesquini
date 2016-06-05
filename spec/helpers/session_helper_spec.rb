@@ -1,4 +1,4 @@
-# File: application_controller_spec.rb
+# File: session_helper_spec.rb
 # Purpouse: Makes a unit test for the session helper
 # License: GPL v3
 # Group 10 Tecprog

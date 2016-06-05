@@ -1,3 +1,9 @@
+# File: install,sh
+# Purpouse: Script that install the database on the system.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 #!/bin/sh
 sudo apt-get install postgresql -y
 

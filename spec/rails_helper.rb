@@ -1,3 +1,9 @@
+# File: rails_helper.rb
+# Purpouse: Auxiliates the spec tests
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'

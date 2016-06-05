@@ -1,3 +1,9 @@
+# File: spec_helpers.rb
+# Purpouse: Auxiliates the spec helpers
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 require 'simplecov'
 require 'factory_girl_rails'
 SimpleCov.start
