@@ -1,3 +1,9 @@
+# File: schema.rb
+# Purpouse: Have teh information off all the tables in the database
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to

@@ -1,3 +1,10 @@
+# File: 0005_create_payments.rb
+# Purpouse: migrates the data from the payments, to the application, taking it of the database 
+# ... defining the types of each variable.
+# License: GPL v3
+# Group 10 Tecprog
+# FGA - Universidade de Brasília - Campus Gama
+
 class CreatePayments < ActiveRecord::Migration
   def change
 
