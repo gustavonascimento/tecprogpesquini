@@ -35,7 +35,6 @@ class Parser::ParserPaymentController < Parser::ParserController
   # imports the parser file.
   def import()
 
-    constante = 0
     Enterprise.find_each do |enterprises|
 
       url = 'http://compras.dados.gov.br/contratos/v1/contratos.csv?cnpj_contratada='
@@ -57,12 +56,9 @@ class Parser::ParserPaymentController < Parser::ParserController
           check_and_save(payment)
         end
       rescue
-        constante = constante +   1
+        constante = constante + 1
       end
     end
-    puts "="*50
-    puts "Quantidade de empresas sem pagamentos: ", constante
-
   end
 
   # checks and save the data from the file.
