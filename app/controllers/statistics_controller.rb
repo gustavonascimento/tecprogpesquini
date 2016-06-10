@@ -162,7 +162,12 @@ class StatisticsController < ApplicationController
                  :data => total_by_type
         })
         plotted_graph.options[:title][:text] = title_of_graph
-        plotted_graph.legend(:layout=> 'vertical',:style=> {:left=> 'auto', :bottom=> 'auto', :right=> '50px', :top=> '100px'})
+        plotted_graph.legend(:layout=> 'vertical',:style=> {
+          :left=> 'auto',
+          :bottom=> 'auto',
+          :right=> '50px',
+          :top=> '100px'
+          })
         plotted_graph.plot_options(:pie=>{
           :allowPointSelect=>true,
           :cursor=>"pointer" ,
