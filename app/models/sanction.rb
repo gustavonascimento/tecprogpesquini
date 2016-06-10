@@ -17,10 +17,15 @@ class Sanction < ActiveRecord::Base
   # returns one array of years, for the sanctions.
   def self.all_years
 
-    #stores the array of years.
-    years = ["Todos",1988, 1991, 1992, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-             2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
-             2014, 2015]
+    # years of data sanction stored
+    years = []
+    for x in 1995..2015
+      years << x
+    end
+
+    # even more years of data sanction stored.
+    years.unshift("Todos", 1988, 1991, 1992)
+
     return years 
     
     Preconditions.check_not_nil(years)
