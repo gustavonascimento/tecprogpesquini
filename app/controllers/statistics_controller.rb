@@ -15,7 +15,7 @@ class StatisticsController < ApplicationController
   def find_all_states
     states_list = State.all_states
     quantity_of_states = 28
-    assert states_list.length == quantity_of_states
+    assert states_list.length == quantity_of_states, "Quantity of states different than 28"
     return states_list
   end
 
@@ -23,15 +23,15 @@ class StatisticsController < ApplicationController
   def find_all_years
     all_years_list = Sanction.all_years
     quantity_of_years = 25
-    assert all_years_list.length == quantity_of_years
+    assert all_years_list.length == quantity_of_years, "Quantity of years different than 25"
     return all_years_list
   end
 
   # list that saves all the type of sanctions regarding a enterprise.
   def find_all_types_of_sanction
     sanction_type_list = SanctionType.all_sanction_types
-    #quantity_of_sanctions = 
-    assert sanction_type_list.length == 15
+    quantity_of_sanctions = 15
+    assert sanction_type_list.length == quantity_of_sanctions, "Quantity of sanction_type different than 15"
     assert sanction_type_list.class == Array
 
     return sanction_type_list
@@ -154,6 +154,8 @@ class StatisticsController < ApplicationController
     end
 
     return @chart
+
+    assert @chart.class == LazyHighCharts::HighChart
 
   end
 
