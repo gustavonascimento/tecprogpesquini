@@ -27,9 +27,17 @@ class ApplicationController < ActionController::Base
   def render_not_found
 
     respond_to do |message|
+    
       message.html{ render :template => "errors/404", :status => 404 }
+    
     end
 
   end
+
+    def internationalization
+      
+      @example_date = DateTime.now
+    
+    end
   
 end

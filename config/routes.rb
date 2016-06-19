@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
 
+  get '/intern' => 'application#internationalization'
   get '/rankings' => 'rankings#index'
   get '/statistics' => 'statistics#index'
   get '/statistics/enterprise_group_ranking' => 'statistics#enterprise_group_ranking'
