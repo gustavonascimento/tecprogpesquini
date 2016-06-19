@@ -19,7 +19,7 @@
 
       <%= search_form_for @search do |f| %>
       <div class="input-group">
-        <%= f.text_field :corporate_name_cont, class: "form-control input-lg id", placeholder: "Digite nome ou CNPJ da empresa", placeholder: "Digite nome ou CNPJ da empresa"%>
+        <%= f.text_field :corporate_name_cont, class: "form-control input-lg id", placeholder: "Digite nome ou CNPJ da empresa", placeholder: t('Digite nome ou CNPJ da empresa') %>
         <span class="input-group-btn">
           <%= f.button type: "submit", class: "btn btn-lg btn-r", id: "search_index" do %>
             <i class="fa fa-search fa-lg"></i>
@@ -30,7 +30,7 @@
       <% end %>
       <div class="text_pesq_empr">
       <hr>
-        <p class="lead"><strong>Pesquisa</strong> de empresas <strong>Inidôneas</strong></p>
+        <p class="lead"><strong><%=t('Pesquisa de empresas Inidôneas') %></strong></p>
 
       </div>
     </div>
@@ -50,12 +50,12 @@
       <div class="col-md-6">
         <div class="about-text">
           <div class="section-title">
-            <h4>O que são </h4>
-            <h2>empresas <strong>Inidôneas</strong> ?</h2>
+            <h4> <%= t('O que são') %> </h4>
+            <h2><strong><%= t('Empresas Inidôneas') %></strong> ?</h2>
             <hr>
             <div class="clearfix"></div>
           </div>
-          <p class="intro">As empresas que constam como sendo inidôneas são aquelas que receberam sanções que tenham como efeito, ou restrição ao direito de participar em licitações ou de celebrar contratos com a Administração Pública. Algumas das sanções que uma empresa pode sofrer:</p>
+          <p class="intro"><%= t('As empresas que constam como sendo inidôneas são aquelas que receberam sanções que tenham como efeito, ou restrição ao direito de participar em licitações ou de celebrar contratos com a Administração Pública, algumas das sanções que uma empresa pode sofrer') %>: </p>
           <ul class="about-list">
             <li>
               <span class="fa fa-dot-circle-o"></span>

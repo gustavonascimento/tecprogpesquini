@@ -28,6 +28,14 @@ en:
   Sobre: "About"
   Saiba Mais: "Know More"
 
+  #welcome.html.erb
+  Digite nome ou CNPJ da empresa: "Type in the name or the CNPJ of the enterprise"
+  Pesquisa de empresas Inidôneas: "Research of disreputable enterprises"
+
+  O que são: "What Are"
+  Empresas Inidôneas: "Disreputable Enterprises"
+
+  As empresas que constam como sendo inidôneas são aquelas que receberam sanções que tenham como efeito, ou restrição ao direito de participar em licitações ou de celebrar contratos com a Administração Pública, algumas das sanções que uma empresa pode sofrer: "Companies listed as inapt are those who received sanctions that have the effect of , or restriction on the right to participate in bidding or contracting with the Public Administration. Some of the sanctions that a company can suffer are"
 
   # _payments.html.erb
   Identificador: "Identifier"
