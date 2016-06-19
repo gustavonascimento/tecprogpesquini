@@ -37,7 +37,7 @@ class StatisticsController < ApplicationController
     
     return @enterprise_group_count
 
-    assert @enterprise_group_count.empty?, "Group of enterprises mus not be null"
+    assert @enterprise_group_count.empty?, "Group of enterprises must not be null"
 
   end
 
