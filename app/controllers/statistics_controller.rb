@@ -194,6 +194,13 @@ class StatisticsController < ApplicationController
         })
     end
 
+    return format_state_graph
+
+
+  end
+
+  def format_state_graph
+
     if (!@states_of_brazil)
 
       # its a clone of the state variable, wich stores all the states. 
@@ -213,6 +220,7 @@ class StatisticsController < ApplicationController
 
     assert @chart.empty?, "List can't be empty"
 
+    assert @chart.class == LazyHighCharts::HighChart 
 
   end
     
@@ -220,19 +228,33 @@ class StatisticsController < ApplicationController
   # @param sanctions_in_state
   def total_by_state()
 
+    sanction = Sanction.new
+
     # initiates a variable that will later on store the resul of how much sanction there is by state.
-    sanctions_in_state = []
+    number_of_sanctions_in_state = []
 
     find_all_states.each do |state_item|
 
-      # stores the state searched by its abbreviation.
+      group_sanctions_by_state(state_item, number_of_sanctions_in_state)
+      
+    end
+
+    return number_of_sanctions_in_state
+
+    assert sanctions_in_state.empty?, "List can't be empty"
+
+  end
+
+  def group_sanctions_by_state(state_item, number_of_sanctions_in_state)
+
+    # stores the state searched by its abbreviation.
       state = State.find_by_abbreviation("#{state_item}")
 
       # have relations to the precious state variable, storing the sanctions of the state.
       sanctions_by_state = Sanction.where(state_id: state[:id])
 
       # variable initiated to store the year that it's selected by the user.
-      selected_year = []
+      selected_year = []  
 
       if(params[:year_].to_i != 0)
         sanctions_by_state.each do |sanction|
@@ -242,16 +264,10 @@ class StatisticsController < ApplicationController
             #nothing to do
           end
         end
-        sanctions_in_state << (selected_year.count)
+        number_of_sanctions_in_state << (selected_year.count)
       else
-        sanctions_in_state << (sanctions_by_state.count)
+        number_of_sanctions_in_state << (sanctions_by_state.count)
       end
-    end
-
-    return sanctions_in_state
-
-    assert sanctions_in_state.empty?, "List can't be empty"
-
   end
 
   # shows the total of sanctions by it type.
