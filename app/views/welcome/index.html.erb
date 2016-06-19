@@ -213,7 +213,7 @@
       <div class="col-md-3 col-sm-6 service">
         <%= link_to(statistics_path(:anchor => "tf-most_sanctioned_ranking"))do %>
         <i class="fa fa-line-chart"></i>
-        <h4><strong>Empresas com mais sanções</strong></h4>
+        <h4><strong><%= t('Empresas com mais sanções') %></strong></h4>
         <p>Ranking que indica  a quantidade de empresas com mais sançoes.</p>
         <% end %>
       </div>
@@ -221,7 +221,7 @@
        <div class="col-md-3 col-sm-6 service">
         <%= link_to(statistics_path(:anchor => "tf-sanction_by_type"))do %>
         <i class="fa fa-pie-chart"></i>
-        <h4><strong>Tipos de sanções</strong></h4>
+        <h4><strong><%= t('Tipos de sanções') %></strong></h4>
         <p>Gráfico que indica os tipos de sanção mais recorrentes e suas quantidades.</p>
         <% end %>
       </div>
@@ -229,7 +229,7 @@
        <div class="col-md-3 col-sm-6 service">
         <%= link_to(statistics_path(:anchor => "tf-payment_rankings"))do %>
         <i class="fa fa-usd"></i>
-        <h4><strong>Empresas com maior numero de pagamentos</strong></h4>
+        <h4><strong><%= t('Empresas com maior numero de pagamentos') %></strong></h4>
         <p>Ranking que indica as empresas que mais receberam pagamentos do governo.</p>
         <% end %>
       </div>
