@@ -45,3 +45,14 @@ en:
   Início do pagamento: "Start of payment"
   Fim do pagamento: "End of payment"
   Dados sobre pagamentos não informados: "Payment data not reported"
+
+  # _sanction.html.rb
+  Orgão sancionador: "Organ sanctioning"
+  Número do processo: "Process number"
+  Data de Início da Sanção: "Initial date of the sanction"
+  Data Final da Sanção: "Final date of the sanction"
+  UF: "UF"
+  Tipo Sanção: "Sanction Type"
+  Contrato Pós Sanção?: "Contract after sanction?"
+  
+
