@@ -5,12 +5,6 @@
 # FGA - Universidade de Brasília - Campus Gama
 
 class StatisticsController < ApplicationController
-
-  # list that saves all the years in the program, since 1988.
-  @@all_years_list = Sanction.all_years
-
-  # list that saves all the type of sanctions regarding a enterprise.
-  @@sanction_type_list = SanctionType.all_sanction_types
   
   # empty method.
   def  index
@@ -20,10 +14,28 @@ class StatisticsController < ApplicationController
   # list that saves all the states from brasil, including 'Distrito Federal'.
   def find_all_states
     states_list = State.all_states
-
+    quantity_of_states = 28
+    assert states_list.length == quantity_of_states
     return states_list
   end
 
+  # list that saves all the years in the program, since 1988.
+  def find_all_years
+    all_years_list = Sanction.all_years
+    quantity_of_years = 25
+    assert all_years_list.length == quantity_of_years
+    return all_years_list
+  end
+
+  # list that saves all the type of sanctions regarding a enterprise.
+  def find_all_types_of_sanction
+    sanction_type_list = SanctionType.all_sanction_types
+    #quantity_of_sanctions = 
+    assert sanction_type_list.length == 15
+    assert sanction_type_list.class == Array
+
+    return sanction_type_list
+  end
 
   # manipulates the data of the enterprises with the most sanctions.
   # @param @enterprise_group_count
@@ -118,6 +130,8 @@ class StatisticsController < ApplicationController
     # stores the title of the graph.
     titulo = "Gráfico de Sanções por Estado"
 
+    @years = find_all_years
+
     # the variable that receives the graph, through the gem.
     @chart = LazyHighCharts::HighChart.new('graph') do |plotted_graph|
       plotted_graph.title(:text => titulo)
@@ -207,9 +221,6 @@ class StatisticsController < ApplicationController
     # initiates a variable that will later on store the resul of how much sanction there is by state.
     sanctions_in_state = []
 
-    # variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
-    @years = @@all_years_list
-
     find_all_states.each do |state_item|
 
       # stores the state searched by its abbreviation.
@@ -259,7 +270,7 @@ class StatisticsController < ApplicationController
      # stores the state searched by its abbreviation.
     state = State.find_by_abbreviation(params[:state_])
 
-    @@sanction_type_list.each do |sanction_type|
+    find_all_types_of_sanction.each do |sanction_type|
       
       # stores the sanction searched by its description.
       sanction_by_description = SanctionType.find_by_description(sanction_type[0])
