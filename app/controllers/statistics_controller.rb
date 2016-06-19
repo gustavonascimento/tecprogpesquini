@@ -6,11 +6,6 @@
 
 class StatisticsController < ApplicationController
 
-  # global variables
-  
-  # list that saves all the states from brasil, including 'Distrito Federal'.
-  @@states_list = State.all_states
-
   # list that saves all the years in the program, since 1988.
   @@all_years_list = Sanction.all_years
 
@@ -21,6 +16,14 @@ class StatisticsController < ApplicationController
   def  index
     
   end
+
+  # list that saves all the states from brasil, including 'Distrito Federal'.
+  def find_all_states
+    states_list = State.all_states
+
+    return states_list
+  end
+
 
   # manipulates the data of the enterprises with the most sanctions.
   # @param @enterprise_group_count
@@ -112,12 +115,6 @@ class StatisticsController < ApplicationController
   # @param @chart
   def sanction_by_state_graph
 
-    # stores the list of all states.
-    gon.states = @@states_list
-
-    # stores the data about the sanctions, by state.
-    gon.dados = total_by_state
-
     # stores the title of the graph.
     titulo = "Gráfico de Sanções por Estado"
 
@@ -132,7 +129,7 @@ class StatisticsController < ApplicationController
 
       # the following lines will categorize the graph, 
       # ... naming the ṕarts of it, and categorizing.
-      plotted_graph.xAxis(:categories => @@states_list)
+      plotted_graph.xAxis(:categories => find_all_states)
       plotted_graph.series(:name => "Número de Sanções", :yAxis => 0, :data => total_by_state)
       plotted_graph.yAxis [
       {:title => {:text => "Sanções", :margin => 30} },
@@ -184,7 +181,7 @@ class StatisticsController < ApplicationController
     if (!@states_of_brazil)
 
       # its a clone of the state variable, wich stores all the states. 
-      @states_of_brazil = @@states_list.clone
+      @states_of_brazil = find_all_states.clone
       @states_of_brazil.unshift("Todos")
     
     else
@@ -213,7 +210,7 @@ class StatisticsController < ApplicationController
     # variable that stores all the years analysed by the program, 1988, 1991 - 2015; 
     @years = @@all_years_list
 
-    @@states_list.each do |state_item|
+    find_all_states.each do |state_item|
 
       # stores the state searched by its abbreviation.
       state = State.find_by_abbreviation("#{state_item}")

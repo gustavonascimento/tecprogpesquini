@@ -66,8 +66,7 @@ class EnterprisesController < ApplicationController
     @collection = Sanction.where(enterprise_id: @enterprise.id)
 
     # stores the payments of the searched enterprise.
-    @payments = Payment.where(enterprise_id: @enterprise.id).paginate
-    (:page => params[:page], :per_page => @per_page )
+    @payments = Payment.where(enterprise_id: @enterprise.id).paginate(:page => params[:page], :per_page => @per_page )
 
     # stores the collections, wich has the sanctions.
     @sanctions = @collection.paginate(:page => params[:page], :per_page => @per_page)
