@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Parser::ParserPaymentController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Parser/ParserPaymentController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'>Parser</span>
+     &raquo; 
+    <span class="title">ParserPaymentController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Parser::ParserPaymentController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ParserController</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ParserController</li>
+          
+            <li class="next">Parser::ParserPaymentController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/parser/parser_payment_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>File: parser_payment_controller.rb Purpouse: Does the parser of payment
+with the file in the csv format. License: GPL v3 Group 10 Tecprog FGA -
+Universidade de Brasília - Campus Gama</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="filename-classvariable" class="">@@filename =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>parser_data/CEIS.csv</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_and_save-instance_method" title="#check_and_save (instance method)">- (Object) <strong>check_and_save</strong>(data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>checks and save the data from the file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_value-instance_method" title="#check_value (instance method)">- (Object) <strong>check_value</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>checks the value of the payment taken of the file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#import-instance_method" title="#import (instance method)">- (Object) <strong>import</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>imports the parser file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="check_and_save-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_and_save</strong>(data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>checks and save the data from the file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_payment_controller.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+    <span class='id identifier rubyid_data'>data</span>
+  <span class='kw'>rescue</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_refresh!'>refresh!</span>
+    <span class='id identifier rubyid_data'>data</span>
+  <span class='kw'>end</span>
+  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_value-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_value</strong>(text) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>checks the value of the payment taken of the file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_payment_controller.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_value'>check_value</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
+
+  <span class='comment'>#this method recieves a string representing a payment value in the format 19,470.99
+</span>  <span class='comment'>#Then it takes off the comma (&quot;,&quot;) and parse it to float format as 19470.99
+</span>   <span class='kw'>begin</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+  <span class='kw'>rescue</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="import-instance_method">
+  
+    - (<tt>Object</tt>) <strong>import</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>imports the parser file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_payment_controller.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_import'>import</span><span class='lparen'>(</span><span class='rparen'>)</span>
+
+  <span class='const'>Enterprise</span><span class='period'>.</span><span class='id identifier rubyid_find_each'>find_each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_enterprises'>enterprises</span><span class='op'>|</span>
+
+    <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://compras.dados.gov.br/contratos/v1/contratos.csv?cnpj_contratada=</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>begin</span>
+      <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span>  <span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='op'>+</span><span class='id identifier rubyid_enterprises'>enterprises</span><span class='period'>.</span><span class='id identifier rubyid_cnpj'>cnpj</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span>
+      <span class='id identifier rubyid_csv'>csv</span> <span class='op'>=</span> <span class='const'>CSV</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:encoding</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ISO-8859-1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+      <span class='id identifier rubyid_csv'>csv</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='id identifier rubyid_payment'>payment</span> <span class='op'>=</span> <span class='const'>Payment</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_identifier'>identifier</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_process_number'>process_number</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>10</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_initial_value'>initial_value</span> <span class='op'>=</span> <span class='id identifier rubyid_check_value'>check_value</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>16</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_sign_date'>sign_date</span> <span class='op'>=</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>12</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_start_date'>start_date</span> <span class='op'>=</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>14</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_end_date'>end_date</span> <span class='op'>=</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_row'>row</span><span class='lbracket'>[</span><span class='int'>15</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_enterprise'>enterprise</span> <span class='op'>=</span> <span class='id identifier rubyid_enterprises'>enterprises</span>
+        <span class='id identifier rubyid_enterprises'>enterprises</span><span class='period'>.</span><span class='id identifier rubyid_payments_sum'>payments_sum</span> <span class='op'>=</span> <span class='id identifier rubyid_enterprises'>enterprises</span><span class='period'>.</span><span class='id identifier rubyid_payments_sum'>payments_sum</span> <span class='op'>+</span> <span class='id identifier rubyid_payment'>payment</span><span class='period'>.</span><span class='id identifier rubyid_initial_value'>initial_value</span>
+        <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_enterprises'>enterprises</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_payment'>payment</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>rescue</span>
+      <span class='id identifier rubyid_constante'>constante</span> <span class='op'>=</span> <span class='id identifier rubyid_constante'>constante</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_payment_controller.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun Jun 19 12:54:47 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>

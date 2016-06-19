@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Parser::ParserCeiController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Parser/ParserCeiController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'>Parser</span>
+     &raquo; 
+    <span class="title">ParserCeiController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Parser::ParserCeiController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ParserController</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ParserController</li>
+          
+            <li class="next">Parser::ParserCeiController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/parser/parser_cei_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>File: parser_cei_controller.rb Purpouse: Does the parser with the file in
+the csv format. License: GPL v3 Group 10 Tecprog FGA - Universidade de
+Brasília - Campus Gama</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="filename-classvariable" class="">@@filename =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>parser_data/CEIS.csv</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_enterprise-instance_method" title="#build_enterprise (instance method)">- (Object) <strong>build_enterprise</strong>(row_data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>takes the value regarding the enterprise from the file and puts it on a
+variable.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_sanction-instance_method" title="#build_sanction (instance method)">- (Object) <strong>build_sanction</strong>(row_data, sanction_type, state, enterprise) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>takes the value regarding the sanction from the file and puts it on a
+variable.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_sanction_type-instance_method" title="#build_sanction_type (instance method)">- (Object) <strong>build_sanction_type</strong>(row_data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>takes the value regarding the sanction type from the file and puts it on a
+variable.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_state-instance_method" title="#build_state (instance method)">- (Object) <strong>build_state</strong>(row_data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>takes the value regarding the state from the file and puts it on a
+variable.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_and_save-instance_method" title="#check_and_save (instance method)">- (Object) <strong>check_and_save</strong>(data) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>checks and save the data from the file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_date-instance_method" title="#check_date (instance method)">- (Object) <strong>check_date</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>checks the date.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_nil_ascii-instance_method" title="#check_nil_ascii (instance method)">- (Object) <strong>check_nil_ascii</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>makes sure that there isn&#39;t empty ascii characters in the csv file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#import-instance_method" title="#import (instance method)">- (Object) <strong>import</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>imports the parser file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="build_enterprise-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_enterprise</strong>(row_data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>takes the value regarding the enterprise from the file and puts it on a
+variable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 85</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_enterprise'>build_enterprise</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_enterprise'>enterprise</span> <span class='op'>=</span> <span class='const'>Enterprise</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_enterprise'>enterprise</span><span class='period'>.</span><span class='id identifier rubyid_cnpj'>cnpj</span> <span class='op'>=</span> <span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CPF ou CNPJ do Sancionado</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='comment'># enterprise.trading_name = check_nil_ascii(row_data[&quot;Nome Fantasia - Cadastro Receita&quot;])
+</span>  <span class='id identifier rubyid_enterprise'>enterprise</span><span class='period'>.</span><span class='id identifier rubyid_corporate_name'>corporate_name</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Razão Social - Cadastro Receita</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_enterprise'>enterprise</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_sanction-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_sanction</strong>(row_data, sanction_type, state, enterprise) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>takes the value regarding the sanction from the file and puts it on a
+variable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_sanction'>build_sanction</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='comma'>,</span> <span class='id identifier rubyid_sanction_type'>sanction_type</span><span class='comma'>,</span> <span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_enterprise'>enterprise</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_sanction'>sanction</span> <span class='op'>=</span> <span class='const'>Sanction</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_initial_date'>initial_date</span> <span class='op'>=</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Data Início Sanção</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_final_date'>final_date</span> <span class='op'>=</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Data Final Sanção</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_anction'>anction</span><span class='period'>.</span><span class='id identifier rubyid_process_number'>process_number</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Número do processo</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_enterprise_id'>enterprise_id</span> <span class='op'>=</span> <span class='id identifier rubyid_enterprise'>enterprise</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_sanction_type_id'>sanction_type_id</span> <span class='op'>=</span> <span class='id identifier rubyid_sanction_type'>sanction_type</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_sanction_organ'>sanction_organ</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Órgão Sancionador</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_state_id'>state_id</span> <span class='op'>=</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_sanction'>sanction</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_sanction_type-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_sanction_type</strong>(row_data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>takes the value regarding the sanction type from the file and puts it on a
+variable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_sanction_type'>build_sanction_type</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_sanction'>sanction</span> <span class='op'>=</span> <span class='const'>SanctionType</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_sanction'>sanction</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tipo Sanção</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_sanction'>sanction</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_state-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_state</strong>(row_data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>takes the value regarding the state from the file and puts it on a
+variable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_state'>build_state</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_uf'>uf</span> <span class='op'>=</span> <span class='const'>State</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_uf'>uf</span><span class='period'>.</span><span class='id identifier rubyid_abbreviation'>abbreviation</span> <span class='op'>=</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_row_data'>row_data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UF Órgão Sancionador</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_uf'>uf</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_and_save-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_and_save</strong>(data) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>checks and save the data from the file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_and_save'>check_and_save</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+    <span class='id identifier rubyid_data'>data</span>
+  <span class='kw'>rescue</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_refresh!'>refresh!</span>
+    <span class='id identifier rubyid_data'>data</span>
+
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_date-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_date</strong>(text) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>checks the date.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_date'>check_date</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span>
+  <span class='kw'>rescue</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_nil_ascii-instance_method">
+  
+    - (<tt>Object</tt>) <strong>check_nil_ascii</strong>(text) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>makes sure that there isn&#39;t empty ascii characters in the csv file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_nil_ascii'>check_nil_ascii</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\u0000</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Não Informado</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+  <span class='kw'>end</span>
+  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="import-instance_method">
+  
+    - (<tt>Object</tt>) <strong>import</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>imports the parser file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_import'>import</span>
+
+  <span class='id identifier rubyid_xd'>xd</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='const'>CSV</span><span class='period'>.</span><span class='id identifier rubyid_foreach'>foreach</span><span class='lparen'>(</span><span class='cvar'>@@filename</span><span class='comma'>,</span> <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:col_sep</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+              <span class='symbol'>:encoding</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ISO-8859-1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='op'>|</span>
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_row'>row</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
+
+    <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tipo de Pessoa</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>J|j</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+      <span class='id identifier rubyid_sanction_type'>sanction_type</span> <span class='op'>=</span> <span class='id identifier rubyid_build_sanction_type'>build_sanction_type</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_state'>state</span> <span class='op'>=</span> <span class='id identifier rubyid_build_state'>build_state</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_enterprise'>enterprise</span> <span class='op'>=</span> <span class='id identifier rubyid_build_enterprise'>build_enterprise</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_build_sanction'>build_sanction</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_sanction_type'>sanction_type</span><span class='comma'>,</span> <span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_enterprise'>enterprise</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='comment'># nothing to do
+</span>    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/parser/parser_cei_controller.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun Jun 19 12:54:47 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>

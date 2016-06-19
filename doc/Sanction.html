@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Sanction
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Sanction.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">Sanction</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Sanction
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Sanction</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/sanction.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>File: sanction.rb Purpouse: The sanction model,  contains all informations
+about sanctions. License: GPL v3 Group 10 Tecprog FGA - Universidade de
+Brasília - Campus Gama</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_years-class_method" title="all_years (class method)">+ (Object) <strong>all_years</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>returns one array of years, for the sanctions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#percentual_sanction-class_method" title="percentual_sanction (class method)">+ (Object) <strong>percentual_sanction</strong>(value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>calculates the percentage of sanctions for the graphs.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#refresh%21-instance_method" title="#refresh! (instance method)">- (Object) <strong>refresh!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>updates the the process number of the sanction.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="all_years-class_method">
+  
+    + (<tt>Object</tt>) <strong>all_years</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>returns one array of years, for the sanctions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/sanction.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_all_years'>all_years</span>
+
+  <span class='comment'># years of data sanction stored
+</span>  <span class='id identifier rubyid_years'>years</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>for</span> <span class='id identifier rubyid_x'>x</span> <span class='kw'>in</span> <span class='int'>1995</span><span class='op'>..</span><span class='int'>2015</span>
+    <span class='id identifier rubyid_years'>years</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_x'>x</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># even more years of data sanction stored.
+</span>  <span class='id identifier rubyid_years'>years</span><span class='period'>.</span><span class='id identifier rubyid_unshift'>unshift</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Todos</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>1988</span><span class='comma'>,</span> <span class='int'>1991</span><span class='comma'>,</span> <span class='int'>1992</span><span class='rparen'>)</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_years'>years</span> 
+  
+  <span class='const'>Preconditions</span><span class='period'>.</span><span class='id identifier rubyid_check_not_nil'>check_not_nil</span><span class='lparen'>(</span><span class='id identifier rubyid_years'>years</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assert'>assert</span> <span class='id identifier rubyid_years'>years</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Array years should contain the years in analysis in the system.</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="percentual_sanction-class_method">
+  
+    + (<tt>Object</tt>) <strong>percentual_sanction</strong>(value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>calculates the percentage of sanctions for the graphs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/sanction.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_percentual_sanction'>percentual_sanction</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+
+    <span class='comment'># it&#39;s the number of total of sanctions.
+</span>    <span class='id identifier rubyid_total'>total</span> <span class='op'>=</span> <span class='const'>Sanction</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+    <span class='comment'># receives the percentage of the total.
+</span>    <span class='id identifier rubyid_percent_total'>percent_total</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>*</span> <span class='float'>100.0</span> <span class='op'>/</span> <span class='id identifier rubyid_total'>total</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_percent_total'>percent_total</span>
+
+    <span class='const'>Preconditions</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_total'>total</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='id identifier rubyid_is_not_nil'>is_not_nil</span> <span class='kw'>and</span> <span class='id identifier rubyid_has_type'>has_type</span><span class='lparen'>(</span><span class='const'>Interger</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='id identifier rubyid_satisfies'>satisfies</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt; 0</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='id identifier rubyid_total'>total</span> <span class='op'>&gt;</span> <span class='int'>0</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='const'>Preconditions</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='id identifier rubyid_is_not_nil'>is_not_nil</span> <span class='kw'>and</span> <span class='id identifier rubyid_has_type'>has_type</span><span class='lparen'>(</span><span class='const'>Double</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="refresh!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>refresh!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>updates the the process number of the sanction.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/sanction.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_refresh!'>refresh!</span>
+
+  <span class='comment'># stores the process number of the sanction.
+</span>  <span class='id identifier rubyid_sanctions_process_number'>sanctions_process_number</span> <span class='op'>=</span> <span class='const'>Sanction</span><span class='period'>.</span><span class='id identifier rubyid_find_by_process_number'>find_by_process_number</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_process_number'>process_number</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_sanctions_process_number'>sanctions_process_number</span>
+
+  <span class='const'>Preconditions</span><span class='period'>.</span><span class='id identifier rubyid_check_not_nil'>check_not_nil</span><span class='lparen'>(</span><span class='id identifier rubyid_sanctions_process_number'>sanctions_process_number</span><span class='rparen'>)</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Sun Jun 19 12:54:47 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.3.0).
+</div>
+
+  </body>
+</html>
