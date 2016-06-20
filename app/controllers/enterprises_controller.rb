@@ -48,6 +48,7 @@ class EnterprisesController < ApplicationController
       @page_number = 0
     end
 
+    assert @page_number > 0, "Unvalid page number"
     return @page_number
 
   end
