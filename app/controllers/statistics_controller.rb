@@ -142,13 +142,16 @@ class StatisticsController < ApplicationController
       end
 
       # the following lines will categorize the graph, 
-      # ... naming the ṕarts of it, and categorizing.
+      # ... naming the parts of it, and categorizing.
       plotted_graph.xAxis(:categories => find_all_states)
       plotted_graph.series(:name => "Número de Sanções", :yAxis => 0, :data => total_by_state)
       plotted_graph.yAxis [
       {:title => {:text => "Sanções", :margin => 30} },
       ]
-      plotted_graph.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
+
+      @y_axis = 75
+      @x_axis = -50
+      plotted_graph.legend(:align => 'right', :verticalAlign => 'top', :y => @y_axis, :x => @x_axis, :layout => 'vertical',)
       plotted_graph.chart({:defaultSeriesType=>"column"})
 
     end
