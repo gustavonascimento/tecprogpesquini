@@ -8,7 +8,9 @@
 
 function main() {
 
+
   (function () {
+
    'use strict';
       /*====================================
       Show Menu on Book
@@ -16,32 +18,42 @@ function main() {
 
       $(document).ready(function() {
 
+
         /*var welcome = document.getElementById('tf-home');*/
         if (document.getElementById('tf-home')  == null) {
+
           $('.navbar-default').addClass('on');
         }
         else {
+
           $('.navbar-default').removeClass('on');
 
           $(window).bind('scroll', function() {
+
             var navHeight = $(window).height() - 100;
             if ($(window).scrollTop() > navHeight) {
+
               $('.navbar-default').addClass('on');
             } 
             else {
+
               $('.navbar-default').removeClass('on');
+            
             }
           });
         }
       });
 
-      $('body').scrollspy({ 
+      $('body').scrollspy({
+
         target: '.navbar-default',
         offset: 80
       })
 
       $(document).ready(function() {
+
        $("#search").owlCarousel({
+
     	      navigation : false, // Show next and prev buttons
     	      slideSpeed : 300,
     	      paginationSpeed : 400,
@@ -59,6 +71,7 @@ function main() {
           });
 
        $("#clients").owlCarousel( {
+
     	      navigation : false, // Show next and prev buttons
     	      slideSpeed : 300,
     	      paginationSpeed : 400,
