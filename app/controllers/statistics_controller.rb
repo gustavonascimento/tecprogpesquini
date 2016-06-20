@@ -202,6 +202,7 @@ class StatisticsController < ApplicationController
 
   end
 
+  # format the array of states in the format needed by the application
   def format_state_graph
 
     if (!@states_of_brazil)
@@ -248,6 +249,7 @@ class StatisticsController < ApplicationController
 
   end
 
+  # this method groupas all the sanctions in the arrays referent tho the state  
   def group_sanctions_by_state(state_item, number_of_sanctions_in_state)
 
     # stores the state searched by its abbreviation.
