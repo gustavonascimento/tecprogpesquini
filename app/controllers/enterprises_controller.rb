@@ -81,7 +81,7 @@ class EnterprisesController < ApplicationController
     # stores the position of the enterprise
     @position_of_enterprise = Enterprise.enterprise_position(@enterprise)
 
-    assert @position_of_enterprise > 0
+    assert @position_of_enterprise > 0, "Invalid position of enterprise value"
     return @position_of_enterprise
 
   end
