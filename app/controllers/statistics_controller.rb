@@ -31,7 +31,7 @@ class StatisticsController < ApplicationController
   def find_all_types_of_sanction
     sanction_type_list = SanctionType.all_sanction_types
     quantity_of_sanctions = 15
-    assert sanction_type_list.length == quantity_of_sanctions, "Quantity of sanction_type different than 15"
+    assert sanction_type_list.length == quantity_of_sanctions, "Quantity of sanction_types different than 15"
     assert sanction_type_list.class == Array
 
     return sanction_type_list

@@ -42,6 +42,8 @@ en:
   As empresas que constam como sendo inidôneas são aquelas que receberam sanções que tenham como efeito, ou restrição ao direito de participar em licitações ou de celebrar contratos com a Administração Pública, algumas das sanções que uma empresa pode sofrer: "Companies listed as inapt are those who received sanctions that have the effect of , or restriction on the right to participate in bidding or contracting with the Public Administration. Some of the sanctions that a company can suffer are"
   Outras: "Other"
 
+  Clique aqui saber sobre mais sanções e informações sobre elas: "Click here to know more about sanctions and information about them"
+
   Formas de pesquisa: "Forms Of Research"
   Pesquisa por nome ou CNPJ: "Search by name or CNPJ"
   Realizar a pesquisa através da razão social da empresa: "Make the search by fantasy name"
@@ -51,7 +53,7 @@ en:
   
   Estatísticas sobre empresas: "Statistics About Companies"
 
-  Visualização de gráficos e rankings sobre empresas inidôneas. Por meio dessa ferramenta é possivel obter algumas informações relacionadas empresas inidôneas de uma forma geral.: "View charts and rankings on disreputable companies . Through this tool it is possible to get some information related disreputable companies in general ."
+  Por meio dessa ferramenta é possivel obter algumas informações relacionadas empresas inidôneas de uma forma geral: "Through this tool it is possible to get some information related disreputable companies in general ."
 
   Estados com mais sanções: "States With The Most Sanctions"
   Gráfico que indica a quantidade de sanções por Unidade Federativa.: "Chart that indicates the quantity of sanctions by Federative Unity" 
@@ -68,6 +70,15 @@ en:
   Empresas com maior numero de pagamentos: "Enterprises with the most number of payments"
 
   Somos alunos da Universidade de Brasilia, desenvolvemos esse software como um projeto da disciplina Métodos de Desenvolvimento de software: "We are students of University Of Brasilia (UNB - FGA). We produced this software as a project in the discipline of Métodos de Desenvolviemento De Software"
+  
+  Gráfico que indica  a quantidade de sanções por Unidade Federativa: "Graph that indicates the number of sanctions by Federative Unity"
+  
+  Ranking que indica a quantidade de empresas com mais sançoes: "Ranking that indicates the number of companies with most sanctions"
+
+  Gráfico que indica os tipos de sanção mais recorrentes e suas quantidades: "Graph that indicates the types of sanctions that are more recurrent and their respective quantities"
+
+  Ranking que indica as empresas que mais receberam pagamentos do governo: "Ranking that indicates the companies that received the most payments by the goverment"
+
   # _payments.html.erb
   Identificador: "Identifier"
   Número do processo: "Process number"

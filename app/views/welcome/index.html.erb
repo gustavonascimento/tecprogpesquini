@@ -170,7 +170,7 @@
         </div>
 
         <div class="item">
-          <div class="thumbnail">
+          <div class="thumbnail">  
             < %= image_tag 'search/lupa.png', class: "img-circle search-img" %>
             <div class="caption">
               <h3>Pesquisa customizada</h3>
@@ -197,7 +197,7 @@
         <hr>
       </div>
       <div class="clearfix"></div>
-      <em><%= t('Visualização de gráficos e rankings sobre empresas inidôneas. Por meio dessa ferramenta é possivel obter algumas informações relacionadas empresas inidôneas de uma forma geral.') %></em>
+      <em><%= t('Por meio dessa ferramenta é possivel obter algumas informações relacionadas empresas inidôneas de uma forma geral') %></em>
     </div>
     <div class="space"></div>
     <div class="row">
@@ -206,7 +206,7 @@
         <%= link_to(statistics_path(:anchor => "tf-sanction_by_state"))do %>
         <i class="fa fa-bar-chart"></i>
         <h4><strong><%= t('Estados com mais sanções') %></strong></h4>
-        <p><%= t('Gráfico que indica  a quantidade de sanções por Unidade Federativa.') %> </p>
+        <p><%= t('Gráfico que indica  a quantidade de sanções por Unidade Federativa') %> </p>
         <% end %>
       </div>
 
@@ -214,7 +214,7 @@
         <%= link_to(statistics_path(:anchor => "tf-most_sanctioned_ranking"))do %>
         <i class="fa fa-line-chart"></i>
         <h4><strong><%= t('Empresas com mais sanções') %></strong></h4>
-        <p>Ranking que indica  a quantidade de empresas com mais sançoes.</p>
+        <p><%=t('Ranking que indica a quantidade de empresas com mais sançoes') %></p>
         <% end %>
       </div>
 
@@ -222,7 +222,7 @@
         <%= link_to(statistics_path(:anchor => "tf-sanction_by_type"))do %>
         <i class="fa fa-pie-chart"></i>
         <h4><strong><%= t('Tipos de sanções') %></strong></h4>
-        <p>Gráfico que indica os tipos de sanção mais recorrentes e suas quantidades.</p>
+        <p><%= t('Gráfico que indica os tipos de sanção mais recorrentes e suas quantidades') %></p>
         <% end %>
       </div>
 
@@ -230,7 +230,7 @@
         <%= link_to(statistics_path(:anchor => "tf-payment_rankings"))do %>
         <i class="fa fa-usd"></i>
         <h4><strong><%= t('Empresas com maior numero de pagamentos') %></strong></h4>
-        <p>Ranking que indica as empresas que mais receberam pagamentos do governo.</p>
+        <p><%=t('Ranking que indica as empresas que mais receberam pagamentos do governo') %></p>
         <% end %>
       </div>
       <!--
