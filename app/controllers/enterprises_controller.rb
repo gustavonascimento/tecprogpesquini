@@ -17,8 +17,11 @@ class EnterprisesController < ApplicationController
       # used to keep the result of a search of a enterprise.
       @result_of_search = Enterprise.search(params[:q].try(:merge, m: 'or'))
 
+      # number of items to display
+      @per_page = 10
+
       # shows the result of the search.
-      @enterprises = Enterprise.paginate(:page => params[:page], :per_page => 10)
+      @enterprises = Enterprise.paginate(:page => params[:page], :per_page => @per_page)
 
       Preconditions.check_not_nil(@result_of_search)
       Preconditions.check_not_nil(@enterprises)
@@ -27,7 +30,7 @@ class EnterprisesController < ApplicationController
 
       params[:q][:cnpj_eq] = params[:q][:corporate_name_cont]
       @result_of_search = Enterprise.search(params[:q].try(:merge, m: 'or'))
-      @enterprises = @result_of_search.result.paginate(:page => params[:page], :per_page => 10)
+      @enterprises = @result_of_search.result.paginate(:page => params[:page], :per_page => @per_page)
 
     end
 
