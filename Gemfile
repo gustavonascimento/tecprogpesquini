@@ -64,5 +64,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem "solid_assert"
 
+  gem 'rails-i18n'
+
 end
 
