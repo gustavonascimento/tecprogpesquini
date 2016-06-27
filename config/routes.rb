@@ -5,6 +5,9 @@
 # FGA - Universidade de Brasília - Campus Gama
 
 Rails.application.routes.draw do
+
+  scope "(:locale)", :locale => /en|pt-BR/ do 
+
   root 'welcome#index'
   get '/parser/cei' => 'parser/parser_cei#import'
   get '/parser/payment' => 'parser/parser_payment#import'
@@ -34,7 +37,9 @@ Rails.application.routes.draw do
   match 'statistics', controller: 'statistics', action: 'total_by_state', via: 'get'
   get '*unmatched_route', :to => 'application#raise_not_found!'
 
+end
 
+# get '/:locale' => "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

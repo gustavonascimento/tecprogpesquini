@@ -34,6 +34,11 @@
         <% if signed_in? %>
           <li><%= link_to "Logout", signout_path, method: "delete" %></li>
         <% end %>
+        <% if I18n.locale == I18n.default_locale %>
+          <li><%= link_to "English", :locale => 'en'%></li>
+          <% else %>
+          <li><%= link_to "Português", :locale => 'pt-BR'%></li>
+        <% end %>
         <!--<li>< %= link_to "Enterprises", enterprises_path %></li>-->
       </ul>
     </div><!-- /.navbar-collapse -->

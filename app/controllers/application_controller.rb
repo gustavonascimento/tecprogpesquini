@@ -16,11 +16,14 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
   rescue_from ActionController::RoutingError, :with => :render_not_found
 
-  before_action
-  :set_locale
+  before_action :set_locale
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 
   # sends a message in case the application has a routing problem.
@@ -41,10 +44,10 @@ class ApplicationController < ActionController::Base
 
   end
 
-    def internationalization
+    # def internationalization
       
-      @example_date = DateTime.now
+    #   @example_date = DateTime.now
     
-    end
+    # end
   
 end
