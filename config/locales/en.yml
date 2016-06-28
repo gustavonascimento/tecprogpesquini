@@ -69,6 +69,14 @@ en:
   Nome ou CNPJ: "Name or CNPJ"
   Empresa: "Company"
 
+  # index.html.erb / companies
+  CNPJ da Empresa: "CNPJ Of Company"
+  Posição no: "Position in"
+  do ranking de empresas mais sancionadas: "ranking of most sanctioned companies"
+  Posição no ranking de empresas que mais receberam verbas de pagamentos: "Position in the raking of companies that received the most payment money"
+  Sanções: "Sanctions"
+  Pagamentos: "Payments"
+  grupo: "the group"
   # _payments.html.erb
   Identificador: "Identifier"
   Número do processo: "Process number"
