@@ -28,6 +28,10 @@ en:
   Sobre: "About"
   Saiba Mais: "Know More"
 
+  # footer.html.erb
+  Sobre nós: "About us"
+  Equipe de alunos UnB, disciplina MDS/GPP: "Team of students of University Of Brasilia, MDS/GPP Disciplines"
+
   #welcome.html.erb
   Digite nome ou CNPJ da empresa: "Type in the name or the CNPJ of the enterprise"
   Pesquisa de empresas Inidôneas: "Research of disreputable enterprises"
@@ -105,3 +109,7 @@ en:
   Este ranking possui informações sobre as empresas que mais receberam sanções desde 1988, separando-as por grupos de número de sanções: "This ranking have infromation about the companies the received the most sanction since 1988"
   Nesse tópico está disponivel o ranking com as informações sobre as empresas que mais recebram pagamentos referentes a licitaçoes do governo desde o começo da obtenção de dados: "Ih this topic its available information with a ranking with the companies that received money form the goverment"
   Clique aqui para ser redirecionado para a página: "Click here to go to the page"
+
+  #graphs
+  Lista de empresas com: "List Of Companies With"
+  sanções: "sanctions"
