@@ -68,6 +68,7 @@ en:
   Lista das empresas encontradas: "List of searched companies"
   Nome ou CNPJ: "Name or CNPJ"
   Empresa: "Company"
+  Empresas: "Companies"
 
   # index.html.erb / companies
   CNPJ da Empresa: "CNPJ Of Company"
@@ -77,6 +78,7 @@ en:
   Sanções: "Sanctions"
   Pagamentos: "Payments"
   grupo: "the group"
+
   # _payments.html.erb
   Identificador: "Identifier"
   Número do processo: "Process number"
@@ -95,3 +97,11 @@ en:
   Tipo Sanção: "Sanction Type"
   Contrato Pós Sanção?: "Contract after sanction?"
 
+  #index.html.erb / statistics 
+  Estados: "States"
+  com mais sanções: "With the most sanctions"
+  Este gráfico ilustra quais tipo de sanções as empresas brasileiras mais sofreram de forma geral Como também demonstra através de um filtro por estado, qual o tipo de sanção mais ocorreu em cada uma das unidades federativas do Brasil: "This graph indicates what kinds of canctions the brazilian companies suffered more"
+  Este gráfico ilustra quais tipos de sanções as empresas brasileiras mais sofreram de forma geral São elas suspensão temporária, declaração de inidoneidade, impedimento de licitar e contratar, proibição de participar de licitações e de contratar Esta estatística também demonstra através de um filtro por estado, qual o tipo de sanção mais ocorreu em cada uma das unidades federativas do Brasil: "This graph indicates what kinds of canctions the brazilian companies suffered more"
+  Este ranking possui informações sobre as empresas que mais receberam sanções desde 1988, separando-as por grupos de número de sanções: "This ranking have infromation about the companies the received the most sanction since 1988"
+  Nesse tópico está disponivel o ranking com as informações sobre as empresas que mais recebram pagamentos referentes a licitaçoes do governo desde o começo da obtenção de dados: "Ih this topic its available information with a ranking with the companies that received money form the goverment"
+  Clique aqui para ser redirecionado para a página: "Click here to go to the page"
