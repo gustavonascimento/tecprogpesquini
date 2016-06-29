@@ -82,6 +82,7 @@ class StatisticsController < ApplicationController
 
     return @enterprises_by_payments
 
+    assert @enterprises_by_payments.class == Array
     assert @enterprises_by_payments.empty?, "Enterprises groups must not be null"
 
   end
@@ -99,6 +100,7 @@ class StatisticsController < ApplicationController
 
     return @enterprises_by_sanctions
 
+    assert @enterprises_by_sanctions.class == Array
     assert @enterprises_by_sanctions.empty?, "Enterprises groups must not be null"
 
   end
@@ -120,6 +122,9 @@ class StatisticsController < ApplicationController
 
     assert @payments_quantity.empty?, "Quantity of payments must not be null"
     assert @enterprises_by_payments_group.empty?, "Enterprises groups must not be null"
+
+    puts payments_quantity.class
+    assert @payments_quantity.class == String 
 
   end
 
